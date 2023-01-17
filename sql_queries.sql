@@ -107,6 +107,23 @@ DELETE FROM staff
 WHERE employee_id=3
 AND first_name="Brenda";
 
+/* alter table */
+
+ALTER TABLE customers
+    ADD middle_initial VARCHAR(45);
+
+ALTER TABLE company_types
+    RENAME COLUMN company_types TO company_type_name;
+
+ALTER TABLE package_types
+    RENAME COLUMN package_type TO package_type_name;
+
+ALTER TABLE countries
+    ADD state VARCHAR(45);
+
+ALTER TABLE countries
+DROP COLUMN state;
+
 /* joins */
 
 SELECT first_name, last_name, status_id 
