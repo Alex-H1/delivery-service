@@ -135,8 +135,8 @@ public class CustomerDAO implements ICustomerDAO {
         } catch (SQLException e) {
             LOG.error(e.getMessage());
         } finally {
-            ps.close();
             rs.close();
+            ps.close();
         }
         return customerList;
     }
