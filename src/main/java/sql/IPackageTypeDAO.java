@@ -1,5 +1,4 @@
-package main.java.sql;
+package sql;
 
 public interface IPackageTypeDAO extends IBaseDAO {
-    main.java.model.PackageType getPackageTypeByName(String Name);
 }

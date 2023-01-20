@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<delivery_service>
+
+    <customer>
+        <firstname>John</firstname>
+        <middleinitial>O</middleinitial>
+        <lastname>Doe</lastname>
+        <phonenumber>"(434)449-6545"</phonenumber>
+    </customer>
+
+    <companytype>
+        <companytypename>industial</companytypename>
+    </companytype>
+
+    <company>
+        <companyname> John's Construction</companyname>
+    </company>
+
+    <jobtitle>
+        <jobtitlename>Foremen</jobtitlename>
+    </jobtitle>
+
+    <staff>
+        <firstname>Jack</firstname>
+        <lastname>Johnson</lastname>
+    </staff>
+</delivery_service>

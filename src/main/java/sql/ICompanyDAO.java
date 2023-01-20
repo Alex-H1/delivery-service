@@ -1,13 +1,10 @@
-package main.java.sql;
+package sql;
 
-import main.java.model.Company;
+import model.Company;
 
 import java.sql.SQLException;
+import java.util.List;
 
 public interface ICompanyDAO extends IBaseDAO {
-    void saveEntity(Company model) throws SQLException;
-
-    void updateEntity(Company model) throws SQLException;
-
-    main.java.model.Company getCompanyByName(String name) throws SQLException;
+    List<Company> getCompanyByName(String name) throws SQLException;
 }

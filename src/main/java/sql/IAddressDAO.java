@@ -1,11 +1,16 @@
-package main.java.sql;
+package sql;
 
-import main.java.model.Address;
+
+import model.Address;
 
 import java.sql.SQLException;
 
 public interface IAddressDAO extends IBaseDAO {
-    main.java.model.Address getAddressByAddress(String address) throws SQLException;
+    Address getAddressByAddress(String address) throws SQLException;
 
     void saveEntity(Address model) throws SQLException;
+
+    void saveEntity(Object model) throws SQLException;
+
+    void updateEntity(Object model) throws SQLException;
 }

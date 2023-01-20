@@ -1,9 +1,14 @@
-package main.java.sql;
+package sql;
 
-import main.java.model.City;
+import model.City;
 
 import java.sql.SQLException;
+import java.util.List;
 
 public interface ICityDAO extends IBaseDAO {
-    City getCityByName(String name) throws SQLException;
+    void saveEntity(Object model) throws SQLException;
+
+    void updateEntity(Object model) throws SQLException;
+
+    List<City> getCityByName(String name) throws SQLException;
 }

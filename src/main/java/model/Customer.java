@@ -1,4 +1,4 @@
-package main.java.model;
+package model;
 
 public class Customer {
     private Integer customerId;
@@ -80,5 +80,20 @@ public class Customer {
 
     public void setCompany(Integer company) {
         this.company = company;
+    }
+
+    @Override
+    public String toString() {
+        return "\n" + "Customer{" +
+                "customerId=" + customerId +
+                ", firstName='" + firstName + '\'' +
+                ", middleInitial='" + middleInitial + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", address=" + address +
+                ", company=" + company +
+                '}' +
+                "\n"
+                ;
     }
 }

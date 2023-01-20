@@ -1,4 +1,4 @@
-package main.java.sql;
+package sql;
 
 import java.sql.SQLException;
 import java.util.List;

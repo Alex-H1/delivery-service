@@ -1,7 +1,11 @@
-package main.java.sql;
+package sql;
+
+import model.Customer;
 
 import java.sql.SQLException;
 
 public interface ICustomerDAO extends IBaseDAO {
-    main.java.model.Customer getCustomerByPhoneNumber(String phoneNumber) throws SQLException;
+
+    Customer getCustomerByPhoneNumber(String phoneNumber) throws SQLException;
+
 }

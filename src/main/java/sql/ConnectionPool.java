@@ -1,4 +1,4 @@
-package main.java.sql;
+package sql;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -17,8 +17,8 @@ public class ConnectionPool {
     private static final Logger LOGGER = LogManager.getLogger(ConnectionPool.class);
     private static final int INITIAL_POOL_SIZE = 5;
     private static ConnectionPool instance = null;
-    private static Vector<Connection> freeConnections = new Vector<>();
-    private static Vector<Connection> usedConnections = new Vector<>();
+    private static final Vector<Connection> freeConnections = new Vector<>();
+    private static final Vector<Connection> usedConnections = new Vector<>();
 
     private ConnectionPool() {
     }

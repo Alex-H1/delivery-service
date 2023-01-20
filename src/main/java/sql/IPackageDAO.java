@@ -1,7 +1,13 @@
-package main.java.sql;
+package sql;
+
+import model.PackageType;
 
 import java.sql.SQLException;
 
 public interface IPackageDAO extends IBaseDAO {
-    main.java.model.Package getPackageByTrackingNumber(String number) throws SQLException;
+    void saveEntity(Object model) throws SQLException;
+
+    void updateEntity(Object model) throws SQLException;
+
+    PackageType getPackageByTrackingNumber(String number) throws SQLException;
 }

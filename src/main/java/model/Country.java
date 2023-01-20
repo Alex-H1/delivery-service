@@ -1,4 +1,4 @@
-package main.java.model;
+package model;
 
 public class Country {
     private Integer countryId;

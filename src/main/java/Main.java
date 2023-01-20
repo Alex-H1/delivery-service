@@ -1,11 +1,9 @@
-package main.java;
-
-import main.java.model.Customer;
-import main.java.sql.jdbc.CustomerDAO;
+import model.Customer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import sql.jdbc.CustomerDAO;
 
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.List;
 
 public class Main {
@@ -14,6 +12,7 @@ public class Main {
     public static void  main(String[] args) throws SQLException {
         CustomerDAO customerDAO = new CustomerDAO();
         List<Customer> customers = customerDAO.getAll();
-        LOG.info(customers);
+        LOG.info(customers.toString());
+
     }
 }
