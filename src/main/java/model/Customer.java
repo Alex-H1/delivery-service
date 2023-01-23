@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Date;
+
 public class Customer {
     private Integer customerId;
     private String firstName;
@@ -8,11 +10,12 @@ public class Customer {
     private String phoneNumber;
     private Integer address;
     private Integer company;
+    private Date dateJoined;
 
     public Customer(Integer customerId, String firstName,
                     String middleInitial, String lastName,
                     String phoneNumber, Integer address,
-                    Integer company) {
+                    Integer company, Date dateJoined) {
         this.customerId = customerId;
         this.firstName = firstName;
         this.middleInitial = middleInitial;
@@ -20,6 +23,7 @@ public class Customer {
         this.phoneNumber = phoneNumber;
         this.address = address;
         this.company = company;
+        this.dateJoined = dateJoined;
     }
 
     public Customer() {
@@ -80,6 +84,14 @@ public class Customer {
 
     public void setCompany(Integer company) {
         this.company = company;
+    }
+
+    public Date getDateJoined() {
+        return dateJoined;
+    }
+
+    public void setDateJoined(Date dateJoined) {
+        this.dateJoined = dateJoined;
     }
 
     @Override

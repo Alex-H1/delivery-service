@@ -5,8 +5,6 @@ import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import java.util.Date;
-@XmlRootElement(name = "order")
-@XmlType(propOrder = {"orderId", "customerId", "boxId", "statusId", "deliveryEmployeeId", "amount", "date"})
 public class Order {
     private Integer orderId;
     private Integer customerId;
@@ -32,7 +30,6 @@ public class Order {
         return orderId;
     }
 
-@XmlElementWrapper(name="orderId")
     public void setOrderId(Integer orderId) {
         this.orderId = orderId;
     }
