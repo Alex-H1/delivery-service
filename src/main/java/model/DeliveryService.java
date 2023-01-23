@@ -6,7 +6,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import java.util.List;
 @XmlRootElement(name = "deliveryService")
-@XmlType(propOrder = {"cuwtomerList", })
+@XmlType(propOrder = {"customerList", "staffList"})
 public class DeliveryService {
     private List<Customer> customerList;
     private List<Staff> staffList;
@@ -20,7 +20,7 @@ public class DeliveryService {
         return customerList;
     }
 
-    @XmlElementWrapper (name = "customers")
+    @XmlElementWrapper(name = "customers")
     @XmlElement(name = "customer", type = Customer.class)
     public void setCustomerList(List<Customer> customerList) {
         this.customerList = customerList;
