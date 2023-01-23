@@ -22,4 +22,12 @@ public class JobTitle {
     public void setJobTitle(String jobTitle) {
         this.jobTitle = jobTitle;
     }
+
+    @Override
+    public String toString() {
+        return "JobTitle{" +
+                "jobTitleId=" + jobTitleId +
+                ", jobTitle='" + jobTitle + '\'' +
+                '}';
+    }
 }

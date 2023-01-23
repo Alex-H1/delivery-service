@@ -5,6 +5,8 @@ public class Address {
     private String address;
     private Double postalCode;
     private Integer city;
+
+
     private int addressType;
 
 
@@ -52,4 +54,14 @@ public class Address {
         this.addressType = addressType;
     }
 
+    @Override
+    public String toString() {
+        return "Address{" +
+                "addressId=" + addressId +
+                ", address='" + address + '\'' +
+                ", postalCode=" + postalCode +
+                ", city=" + city +
+                ", addressType=" + addressType +
+                '}';
+    }
 }

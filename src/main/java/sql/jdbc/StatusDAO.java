@@ -38,11 +38,6 @@ public class StatusDAO implements IStatusDAO {
         }
     }
 
-    @Override
-    public void saveEntity(Object model) throws SQLException {
-
-    }
-
     public Status getEntityByID(int id) throws SQLException {
         Connection c = connectionPool.getConnection();
         String query = "SELECT * FROM statuses where status_id=(?)";
@@ -65,11 +60,6 @@ public class StatusDAO implements IStatusDAO {
             }
         }
         return status;
-    }
-
-    @Override
-    public void updateEntity(Object model) throws SQLException {
-
     }
 
     public void updateEntity(Status model) throws SQLException {

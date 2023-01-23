@@ -4,7 +4,7 @@ public class Staff {
     private Integer employeeId;
     private String firstName;
     private String lastName;
-    private Integer jobTitle;
+    private Integer jobTitleId;
 
     public Staff() {
 
@@ -31,15 +31,25 @@ public class Staff {
         this.lastName = lastName;
     }
 
-    public Integer getJobTitle() {
-        return jobTitle;
+    public Integer getJobTitleId() {
+        return jobTitleId;
     }
 
     public void setEmployeeId(Integer employeeId) {
         this.employeeId = employeeId;
     }
 
-    public void setJobTitle(Integer jobTitle) {
-        this.jobTitle = jobTitle;
+    public void setJobTitleId(Integer jobTitleId) {
+        this.jobTitleId = jobTitleId;
+    }
+
+    @Override
+    public String toString() {
+        return "Staff{" +
+                "employeeId=" + employeeId +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", jobTitleId=" + jobTitleId +
+                '}';
     }
 }

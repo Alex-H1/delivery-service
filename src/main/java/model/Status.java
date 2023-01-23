@@ -2,7 +2,7 @@ package model;
 
 public class Status {
     private Integer statusId;
-    private String StatusName;
+    private String statusName;
 
     public Status() {
     }
@@ -16,10 +16,18 @@ public class Status {
     }
 
     public String getStatusName() {
-        return StatusName;
+        return statusName;
     }
 
     public void setStatusName(String statusName) {
-        StatusName = statusName;
+        this.statusName = statusName;
+    }
+
+    @Override
+    public String toString() {
+        return "Status{" +
+                "statusId=" + statusId +
+                ", statusName='" + statusName + '\'' +
+                '}';
     }
 }

@@ -27,7 +27,7 @@ public class OrderDAO implements IOrderDAO {
             ps.setInt(1, model.getCustomer());
             ps.setInt(2, model.getOrderId());
             ps.setInt(3, model.getStatus());
-            ps.setInt(4, model.getDeliveryEmployee());
+            ps.setInt(4, model.getDeliveryEmployeeId());
             ps.setDouble(5, model.getAmount());
             ps.execute();
         } catch (SQLException e) {
@@ -43,11 +43,6 @@ public class OrderDAO implements IOrderDAO {
         }
     }
 
-    @Override
-    public void saveEntity(Object model) throws SQLException {
-
-    }
-
     public Order getEntityByID(int id) throws SQLException {
         Connection c = connectionPool.getConnection();
         String query = "SELECT * FROM orders WHERE order_id=(?)";
@@ -56,9 +51,9 @@ public class OrderDAO implements IOrderDAO {
             ps.setInt(1, id);
             ResultSet rs = ps.getResultSet();
             order.setOrderId((rs.getInt("order_id")));
-            order.setBox(rs.getInt("package_id"));
+            order.setBoxId(rs.getInt("package_id"));
             order.setStatus(rs.getInt("status_id"));
-            order.setDeliveryEmployee(rs.getInt("delivery_employee_id"));
+            order.setDeliveryEmployeeId(rs.getInt("delivery_employee_id"));
             order.setAmount(rs.getDouble("amount"));
 
 
@@ -77,10 +72,6 @@ public class OrderDAO implements IOrderDAO {
     }
 
     @Override
-    public void updateEntity(Object model) throws SQLException {
-
-    }
-
     public void updateEntity(Order model) throws SQLException {
         Connection c = connectionPool.getConnection();
         String query = "UPDATE orders SET customer_id, package_id, status_id, " +
@@ -90,7 +81,7 @@ public class OrderDAO implements IOrderDAO {
             ps.setInt(1, model.getCustomer());
             ps.setInt(2, model.getOrderId());
             ps.setInt(3, model.getStatus());
-            ps.setInt(4, model.getDeliveryEmployee());
+            ps.setInt(4, model.getDeliveryEmployeeId());
             ps.setDouble(5, model.getAmount());
             ps.setInt(5, model.getOrderId());
             ps.execute();
@@ -135,9 +126,9 @@ public class OrderDAO implements IOrderDAO {
             while (rs.next()) {
                 Order order = new Order();
                 order.setOrderId((rs.getInt("order_id")));
-                order.setBox(rs.getInt("package_id"));
+                order.setBoxId(rs.getInt("package_id"));
                 order.setStatus(rs.getInt("status_id"));
-                order.setDeliveryEmployee(rs.getInt("delivery_employee_id"));
+                order.setDeliveryEmployeeId(rs.getInt("delivery_employee_id"));
                 order.setAmount(rs.getDouble("amount"));
             }
 

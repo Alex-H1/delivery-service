@@ -24,7 +24,7 @@ public class StaffDAO implements IStaffDAO {
         try (PreparedStatement ps = c.prepareStatement(query)) {
             ps.setString(1, model.getFirstName());
             ps.setString(2, model.getLastName());
-            ps.setInt(3, model.getJobTitle());
+            ps.setInt(3, model.getJobTitleId());
 
             ps.execute();
         } catch (SQLException e) {
@@ -50,7 +50,7 @@ public class StaffDAO implements IStaffDAO {
             staff.setEmployeeId((rs.getInt("employee_id")));
             staff.setFirstName(rs.getString("first_name"));
             staff.setLastName(rs.getString("last_name"));
-            staff.setJobTitle(rs.getInt("job_title_id"));
+            staff.setJobTitleId(rs.getInt("job_title_id"));
 
 
         } catch (SQLException e) {
@@ -75,8 +75,7 @@ public class StaffDAO implements IStaffDAO {
         try (PreparedStatement ps = c.prepareStatement(query)) {
             ps.setString(1, model.getFirstName());
             ps.setString(2, model.getLastName());
-            ps.setInt(3, model.getJobTitle());
-
+            ps.setInt(3, model.getJobTitleId());
             ps.execute();
         } catch (SQLException e) {
             LOG.error(e.getMessage());
@@ -122,7 +121,7 @@ public class StaffDAO implements IStaffDAO {
                     staff.setEmployeeId((rs.getInt("employee_id")));
                     staff.setFirstName(rs.getString("first_name"));
                     staff.setLastName(rs.getString("last_name"));
-                    staff.setJobTitle(rs.getInt("job_title_id"));
+                    staff.setJobTitleId(rs.getInt("job_title_id"));
                 }
             }
         } catch (SQLException e) {
@@ -140,15 +139,6 @@ public class StaffDAO implements IStaffDAO {
     }
 
 
-    @Override
-    public void saveEntity(Object model) throws SQLException {
-
-    }
-
-    @Override
-    public void updateEntity(Object model) throws SQLException {
-
-    }
 
     public List<Staff> getStaffByName(String name) throws SQLException {
         Connection c = connectionPool.getConnection();
@@ -162,7 +152,7 @@ public class StaffDAO implements IStaffDAO {
                 staff.setEmployeeId((rs.getInt("employee_id")));
                 staff.setFirstName(rs.getString("first_name"));
                 staff.setLastName(rs.getString("last_name"));
-                staff.setJobTitle(rs.getInt("job_title_id"));
+                staff.setJobTitleId(rs.getInt("job_title_id"));
             }
 
         } catch (SQLException e) {

@@ -44,11 +44,6 @@ public class CustomerDAO implements ICustomerDAO {
         }
     }
 
-    @Override
-    public void saveEntity(Object model) throws SQLException {
-
-    }
-
     public Customer getEntityByID(int id) throws SQLException {
         Connection c = connectionPool.getConnection();
         String query = "SELECT * FROM customers WHERE customer_id=(?)";
@@ -78,12 +73,6 @@ public class CustomerDAO implements ICustomerDAO {
         }
         return customer;
     }
-
-    @Override
-    public void updateEntity(Object model) throws SQLException {
-
-    }
-
 
     @Override
     public Customer getCustomerByPhoneNumber(String phoneNumber) throws SQLException {

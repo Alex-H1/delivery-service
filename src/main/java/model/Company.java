@@ -32,4 +32,13 @@ public class Company {
     public void setCompanyType(Integer companyType) {
         this.companyType = companyType;
     }
+
+    @Override
+    public String toString() {
+        return "Company{" +
+                "companyId=" + companyId +
+                ", companyName='" + companyName + '\'' +
+                ", companyType=" + companyType +
+                '}';
+    }
 }

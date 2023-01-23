@@ -1,4 +1,6 @@
 package sql;
 
-public interface IPackageTypeDAO extends IBaseDAO {
+import model.PackageType;
+
+public interface IPackageTypeDAO extends IBaseDAO<PackageType> {
 }

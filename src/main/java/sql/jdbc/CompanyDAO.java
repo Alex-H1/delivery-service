@@ -38,11 +38,6 @@ public class CompanyDAO implements ICompanyDAO {
         }
     }
 
-    @Override
-    public void saveEntity(Object model) throws SQLException {
-
-    }
-
     public Company getEntityByID(int id) throws SQLException {
         Connection c = connectionPool.getConnection();
         String query = "SELECT * FROM companies WHERE company_id=(?)";
@@ -66,11 +61,6 @@ public class CompanyDAO implements ICompanyDAO {
             }
         }
         return company;
-    }
-
-    @Override
-    public void updateEntity(Object model) throws SQLException {
-
     }
 
     public void updateEntity(Company model) throws SQLException {

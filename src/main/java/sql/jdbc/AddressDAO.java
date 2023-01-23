@@ -75,11 +75,6 @@ public class AddressDAO implements IAddressDAO {
         }
     }
 
-    @Override
-    public void saveEntity(Object model) throws SQLException {
-
-    }
-
     public Address getEntityByID(int id) throws SQLException {
         Connection c = connectionPool.getConnection();
         String query = "SELECT * FROM addresses WHERE address_id=(?)";
@@ -105,11 +100,6 @@ public class AddressDAO implements IAddressDAO {
             }
         }
         return address;
-    }
-
-    @Override
-    public void updateEntity(Object model) throws SQLException {
-
     }
 
     public void updateEntity(Address model) throws SQLException {

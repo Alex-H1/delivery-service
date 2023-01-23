@@ -26,4 +26,12 @@ public class PackageType {
     public void setPackageTypeName(String packageTypeName) {
         this.packageTypeName = packageTypeName;
     }
+
+    @Override
+    public String toString() {
+        return "PackageType{" +
+                "packageTypeId=" + packageTypeId +
+                ", packageTypeName='" + packageTypeName + '\'' +
+                '}';
+    }
 }

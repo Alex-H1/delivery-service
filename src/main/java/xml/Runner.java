@@ -12,6 +12,8 @@ public class Runner {
     private static final Logger LOG = LogManager.getLogger(Runner.class);
 
     public static void main(String[] args) throws XMLStreamException, FileNotFoundException {
-       Parser.reader();
+        StaxParser.read();
+        LOG.info("xml is valid: " + XMLValidator.ValidateXML("src/main/resources/deliveryService.xsd", "src/main/resources/deliveryService.xml"));
+
     }
 }

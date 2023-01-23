@@ -32,4 +32,13 @@ public class City {
     public void setCountry(Integer country) {
         this.country = country;
     }
+
+    @Override
+    public String toString() {
+        return "City{" +
+                "cityId=" + cityId +
+                ", cityName='" + cityName + '\'' +
+                ", country=" + country +
+                '}';
+    }
 }

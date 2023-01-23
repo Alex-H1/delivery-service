@@ -37,11 +37,6 @@ public class JobTitleDAO implements IJobTitleDAO {
         }
     }
 
-    @Override
-    public void saveEntity(Object model) throws SQLException {
-
-    }
-
     public JobTitle getEntityByID(int id) throws SQLException {
         Connection c = connectionPool.getConnection();
         String query = "SELECT * FROM job_titles WHERE job_title_id=(?)";
@@ -64,11 +59,6 @@ public class JobTitleDAO implements IJobTitleDAO {
             }
         }
         return jobTitle;
-    }
-
-    @Override
-    public void updateEntity(Object model) throws SQLException {
-
     }
 
     public void updateEntity(JobTitle model) throws SQLException {

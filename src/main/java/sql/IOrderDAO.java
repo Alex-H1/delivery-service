@@ -1,6 +1,8 @@
 package sql;
 
 
-public interface IOrderDAO extends IBaseDAO {
+import model.Order;
+
+public interface IOrderDAO extends IBaseDAO<Order> {
 
 }

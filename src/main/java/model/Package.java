@@ -1,8 +1,13 @@
 package model;
 public class Package {
+    private Integer orderId;
     private Integer packageId;
     private String trackingNumber;
     private Integer packageTypeId;
+    private Double weight;
+    public Package() {
+
+    }
 
     public Integer getPackageTypeId() {
         return packageTypeId;
@@ -12,7 +17,6 @@ public class Package {
         this.packageTypeId = packageTypeId;
     }
 
-    private Double weight;
 
     public Integer getOrderId() {
         return orderId;
@@ -22,12 +26,7 @@ public class Package {
         this.orderId = orderId;
     }
 
-    private Integer orderId;
-    private PackageType packageType;
 
-    public Package() {
-
-    }
 
     public Integer getPackageId() {
         return packageId;
@@ -53,11 +52,14 @@ public class Package {
         this.weight = weight;
     }
 
-    public PackageType getPackageType() {
-        return packageType;
-    }
-
-    public void setPackageType(PackageType packageType) {
-        this.packageType = packageType;
+    @Override
+    public String toString() {
+        return "Package{" +
+                "orderId=" + orderId +
+                ", packageId=" + packageId +
+                ", trackingNumber='" + trackingNumber + '\'' +
+                ", packageTypeId=" + packageTypeId +
+                ", weight=" + weight +
+                '}';
     }
 }

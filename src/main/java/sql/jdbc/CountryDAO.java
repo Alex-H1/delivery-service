@@ -37,11 +37,6 @@ public class CountryDAO implements ICountryDAO {
         }
     }
 
-    @Override
-    public void saveEntity(Object model) throws SQLException {
-
-    }
-
     public Country getEntityByID(int id) throws SQLException {
         Connection c = connectionPool.getConnection();
         String query = "SELECT * FROM country WHERE country_id=(?)";
@@ -63,11 +58,6 @@ public class CountryDAO implements ICountryDAO {
             }
         }
         return country;
-    }
-
-    @Override
-    public void updateEntity(Object model) throws SQLException {
-
     }
 
     public void updateEntity(Country model) throws SQLException {

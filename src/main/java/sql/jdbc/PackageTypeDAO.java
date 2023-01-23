@@ -4,7 +4,7 @@ import model.PackageType;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import sql.ConnectionPool;
-import sql.IPackageDAO;
+import sql.IPackageTypeDAO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -13,7 +13,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PackageTypeDAO implements IPackageDAO {
+public class PackageTypeDAO implements IPackageTypeDAO {
     private static final Logger LOG = LogManager.getLogger(AddressTypeDAO.class);
     private final ConnectionPool connectionPool = ConnectionPool.getInstance();
 
@@ -127,18 +127,6 @@ public class PackageTypeDAO implements IPackageDAO {
         return packageTypeList;
     }
 
-
-    @Override
-    public void saveEntity(Object model) throws SQLException {
-
-    }
-
-    @Override
-    public void updateEntity(Object model) throws SQLException {
-
-    }
-
-    @Override
     public PackageType getPackageByTrackingNumber(String number) throws SQLException {
         Connection c = connectionPool.getConnection();
         String query = "SELECT * FROM package_types where package_type_id=(?)";

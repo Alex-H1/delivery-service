@@ -39,11 +39,6 @@ public class CityDAO implements ICityDAO {
         }
     }
 
-    @Override
-    public void saveEntity(Object model) throws SQLException {
-
-    }
-
     public City getEntityByID(int id) throws SQLException {
         Connection c = connectionPool.getConnection();
         String query = "SELECT * FROM cities WHERE city_id=(?)";
@@ -68,11 +63,6 @@ public class CityDAO implements ICityDAO {
             }
         }
         return city;
-    }
-
-    @Override
-    public void updateEntity(Object model) throws SQLException {
-
     }
 
     public void updateEntity(City model) throws SQLException {

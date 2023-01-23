@@ -41,10 +41,6 @@ public class PackageDAO implements IPackageDAO {
         }
     }
 
-    @Override
-    public void saveEntity(Object model) throws SQLException {
-
-    }
 
     public Package getEntityByID(int id) throws SQLException {
         Connection c = connectionPool.getConnection();
@@ -68,11 +64,6 @@ public class PackageDAO implements IPackageDAO {
             }
         }
         return aPackage;
-    }
-
-    @Override
-    public void updateEntity(Object model) throws SQLException {
-
     }
 
     public void updateEntity(Package model) throws SQLException {
@@ -146,28 +137,4 @@ public class PackageDAO implements IPackageDAO {
         return packageList;
     }
 
-    public PackageType getPackageByTrackingNumber(String number) throws SQLException {
-        Connection c = connectionPool.getConnection();
-        String query = "SELECT * FROM packages WHERE tracking_number=(?)";
-        Package aPackage = new Package();
-        try (PreparedStatement ps = c.prepareStatement(query)) {
-            ps.setString(1, number);
-            ResultSet rs = ps.getResultSet();
-            aPackage.setPackageId((rs.getInt("package_id")));
-            aPackage.setTrackingNumber(rs.getString("tracking_number"));
-            aPackage.setWeight(rs.getDouble("weight"));
-            aPackage.setPackageTypeId(rs.getInt("package_type_id"));
-        } catch (SQLException e) {
-            LOG.error(e.getMessage());
-        } finally {
-            if (c != null) {
-                try {
-                    connectionPool.releaseConnection(c);
-                } catch (SQLException e) {
-                    LOG.error(e.getMessage());
-                }
-            }
-        }
-        return aPackage.getPackageType();
-    }
 }

@@ -23,4 +23,12 @@ public class AddressType {
     public void setAddressType(String addressType) {
         this.addressType = addressType;
     }
+
+    @Override
+    public String toString() {
+        return "AddressType{" +
+                "addressTypeId=" + addressTypeId +
+                ", addressType='" + addressType + '\'' +
+                '}';
+    }
 }

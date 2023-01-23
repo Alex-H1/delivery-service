@@ -66,11 +66,6 @@ public class AddressTypeDAO implements IAddressTypeDAO {
 
     }
 
-    @Override
-    public void saveEntity(Object model) throws SQLException {
-
-    }
-
     public AddressType getEntityByID(int id) throws SQLException {
         Connection c = ConnectionPool.getInstance().getConnection();
         String query = "SELECT * FROM addresss_types WHERE address_type_id=(?)";
@@ -93,11 +88,6 @@ public class AddressTypeDAO implements IAddressTypeDAO {
             }
         }
         return addressType;
-    }
-
-    @Override
-    public void updateEntity(Object model) throws SQLException {
-
     }
 
     public void updateEntity(AddressType model) throws SQLException {

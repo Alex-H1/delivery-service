@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="delivery_service" type="delivery_serviceType"/>
+  <xs:complexType name="customerType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="customerid"/>
+      <xs:element type="xs:string" name="firstname"/>
+      <xs:element type="xs:string" name="middleinitial"/>
+      <xs:element type="xs:string" name="lastname"/>
+      <xs:element type="xs:string" name="phonenumber"/>
+      <xs:element type="xs:string" name="companyid"/>
+      <xs:element type="xs:string" name="addressid"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="companytypeType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="companytypeid"/>
+      <xs:element type="xs:string" name="companytypename"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="companyType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="companyids"/>
+      <xs:element type="xs:string" name="companyname"/>
+      <xs:element type="xs:string" name="companytypeids"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="jobtitleType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="jobtitleid"/>
+      <xs:element type="xs:string" name="jobtitlename"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="countryType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="countryid"/>
+      <xs:element type="xs:string" name="countryname"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="delivery_serviceType">
+    <xs:sequence>
+      <xs:element type="customerType" name="customer"/>
+      <xs:element type="companytypeType" name="companytype"/>
+      <xs:element type="companyType" name="company"/>
+      <xs:element type="jobtitleType" name="jobtitle"/>
+      <xs:element type="countryType" name="country"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

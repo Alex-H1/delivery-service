@@ -2,26 +2,34 @@
 <delivery_service>
 
     <customer>
-        <firstname>John</firstname>
-        <middleinitial>O</middleinitial>
-        <lastname>Doe</lastname>
+        <customerid>1</customerid>
+        <firstname>"John"</firstname>
+        <middleinitial>"O"</middleinitial>
+        <lastname>"Doe"</lastname>
         <phonenumber>"(434)449-6545"</phonenumber>
+        <companyid>1</companyid>
+        <addressid>1</addressid>
     </customer>
 
     <companytype>
-        <companytypename>industial</companytypename>
+        <companytypeid>1</companytypeid>
+        <companytypename>"industial"</companytypename>
     </companytype>
 
     <company>
-        <companyname> John's Construction</companyname>
+        <companyids>1</companyids>
+        <companyname> "John's Construction"</companyname>
+        <companytypeids>1</companytypeids>
     </company>
 
     <jobtitle>
-        <jobtitlename>Foremen</jobtitlename>
+        <jobtitleid>1</jobtitleid>
+        <jobtitlename>"Foremen"</jobtitlename>
     </jobtitle>
 
-    <staff>
-        <firstname>Jack</firstname>
-        <lastname>Johnson</lastname>
-    </staff>
+    <country>
+        <countryid>1</countryid>
+        <countryname>"Canada"</countryname>
+    </country>
+
 </delivery_service>

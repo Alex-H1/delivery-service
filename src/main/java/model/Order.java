@@ -3,9 +3,9 @@ package model;
 public class Order {
     private Integer orderId;
     private Integer customer;
-    private Integer box;
+    private Integer boxId;
     private Integer status;
-    private Integer deliveryEmployee;
+    private Integer deliveryEmployeeId;
     private Double amount;
 
 
@@ -28,12 +28,12 @@ public class Order {
         this.customer = customer;
     }
 
-    public Integer getBox() {
-        return box;
+    public Integer getBoxId() {
+        return boxId;
     }
 
-    public void setBox(Integer box) {
-        this.box = box;
+    public void setBoxId(Integer boxId) {
+        this.boxId = boxId;
     }
 
     public Integer getStatus() {
@@ -44,12 +44,12 @@ public class Order {
         this.status = status;
     }
 
-    public Integer getDeliveryEmployee() {
-        return deliveryEmployee;
+    public Integer getDeliveryEmployeeId() {
+        return deliveryEmployeeId;
     }
 
-    public void setDeliveryEmployee(Integer deliveryEmployee) {
-        this.deliveryEmployee = deliveryEmployee;
+    public void setDeliveryEmployeeId(Integer deliveryEmployee) {
+        this.deliveryEmployeeId = deliveryEmployee;
     }
 
     public Double getAmount() {
@@ -58,5 +58,17 @@ public class Order {
 
     public void setAmount(Double amount) {
         this.amount = amount;
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "orderId=" + orderId +
+                ", customer=" + customer +
+                ", boxId=" + boxId +
+                ", status=" + status +
+                ", deliveryEmployeeId=" + deliveryEmployeeId +
+                ", amount=" + amount +
+                '}';
     }
 }

@@ -23,4 +23,12 @@ public class CompanyType {
     public void setCompanytypeName(String companytypeName) {
         this.companytypeName = companytypeName;
     }
+
+    @Override
+    public String toString() {
+        return "CompanyType{" +
+                "companyTypeId=" + companyTypeId +
+                ", companytypeName='" + companytypeName + '\'' +
+                '}';
+    }
 }
