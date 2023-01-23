@@ -24,7 +24,7 @@ public class OrderDAO implements IOrderDAO {
                 "delivery_employee_id, amount)"
                 + "VALUES((?), (?), (?), (?), (?))";
         try (PreparedStatement ps = c.prepareStatement(query)) {
-            ps.setInt(1, model.getCustomer());
+            ps.setInt(1, model.getCustomerId());
             ps.setInt(2, model.getOrderId());
             ps.setInt(3, model.getStatus());
             ps.setInt(4, model.getDeliveryEmployeeId());
@@ -78,7 +78,7 @@ public class OrderDAO implements IOrderDAO {
                 "delivery_employee_id, amount)"
                 + "WHERE order_id=(?)";
         try (PreparedStatement ps = c.prepareStatement(query)) {
-            ps.setInt(1, model.getCustomer());
+            ps.setInt(1, model.getCustomerId());
             ps.setInt(2, model.getOrderId());
             ps.setInt(3, model.getStatus());
             ps.setInt(4, model.getDeliveryEmployeeId());

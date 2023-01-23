@@ -1,31 +1,56 @@
 package model;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementWrapper;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+import java.util.Date;
+@XmlRootElement(name = "order")
+@XmlType(propOrder = {"orderId", "customerId", "boxId", "statusId", "deliveryEmployeeId", "amount", "date"})
 public class Order {
     private Integer orderId;
-    private Integer customer;
+    private Integer customerId;
     private Integer boxId;
     private Integer status;
     private Integer deliveryEmployeeId;
     private Double amount;
+    private Date date;
 
+    public Order(Integer orderId, Integer customer, Integer boxId, Integer status, Integer deliveryEmployeeId, Double amount, Date date) {
+        this.orderId = orderId;
+        this.customerId = customer;
+        this.boxId = boxId;
+        this.status = status;
+        this.deliveryEmployeeId = deliveryEmployeeId;
+        this.amount = amount;
+        this.date = date;
+    }
 
     public Order() {
     }
-
     public Integer getOrderId() {
         return orderId;
     }
 
+@XmlElementWrapper(name="orderId")
     public void setOrderId(Integer orderId) {
         this.orderId = orderId;
     }
 
-    public int getCustomer() {
-        return customer;
+    public int getCustomerId() {
+        return customerId;
     }
 
-    public void setCustomer(Integer customer) {
-        this.customer = customer;
+    public void setCustomerId(Integer customerId) {
+        this.customerId = customerId;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     public Integer getBoxId() {
@@ -64,7 +89,7 @@ public class Order {
     public String toString() {
         return "Order{" +
                 "orderId=" + orderId +
-                ", customer=" + customer +
+                ", customer=" + customerId +
                 ", boxId=" + boxId +
                 ", status=" + status +
                 ", deliveryEmployeeId=" + deliveryEmployeeId +
