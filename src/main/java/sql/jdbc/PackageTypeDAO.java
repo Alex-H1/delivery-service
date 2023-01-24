@@ -152,4 +152,31 @@ public class PackageTypeDAO implements IPackageTypeDAO {
     }
 
 
+    @Override
+    public List<PackageType> getPackageTypeByName(String name) {
+        Connection c = connectionPool.getConnection();
+        String query = "SELECT * FROM package_types where package_type_id=(?)";
+        List<PackageType> packageTypeList = new ArrayList<>();
+        try (PreparedStatement ps = c.prepareStatement(query)) {
+            ps.setString(1, name);
+            ResultSet rs = ps.getResultSet();
+            ps.execute();
+            while(rs.next()) {
+                PackageType packageType = new PackageType();
+                packageType.setPackageTypeId(rs.getInt("package_type_id"));
+                packageType.setPackageTypeName(rs.getString("package_type_name"));
+            }
+        } catch (SQLException e) {
+            LOG.error(e.getMessage());
+        } finally {
+            if (c != null) {
+                try {
+                    connectionPool.releaseConnection(c);
+                } catch (SQLException e) {
+                    LOG.error(e.getMessage());
+                }
+            }
+        }
+        return packageTypeList;
+    }
 }

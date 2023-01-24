@@ -4,9 +4,11 @@ import model.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import javax.xml.namespace.QName;
 import javax.xml.stream.XMLEventReader;
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamException;
+import javax.xml.stream.events.Attribute;
 import javax.xml.stream.events.StartElement;
 import javax.xml.stream.events.XMLEvent;
 import java.io.FileNotFoundException;
@@ -32,91 +34,81 @@ public class StaxParser {
 
                 switch (startElement.getName().getLocalPart()) {
                     case "customer":
-                         customer = new Customer();
-                        LOG.info("Customers");
+                        customer = new Customer();
+                        Attribute id = startElement.getAttributeByName(new QName("id"));
+                        if(id != null){
+                            customer.setCustomerId(Integer.valueOf(id.getValue()));
+                        }
                         break;
-                    case "customerid":
-                        nextEvent = reader.nextEvent();
-                        customer.setCustomerId(Integer.valueOf(nextEvent.asCharacters().getData()));
-                        break;
-                    case "firstname":
+                    case "firstName":
                         nextEvent = reader.nextEvent();
                         customer.setFirstName(nextEvent.asCharacters().getData());
                         break;
-                    case "middleinitial":
+                    case "middleInitial":
                         nextEvent = reader.nextEvent();
                         customer.setMiddleInitial(nextEvent.asCharacters().getData());
                         break;
-                    case "lastname":
+                    case "lastName":
                         nextEvent = reader.nextEvent();
                         customer.setLastName(nextEvent.asCharacters().getData());
                         break;
-                    case "phonenumber":
+                    case "phoneNumber":
                         nextEvent = reader.nextEvent();
                         customer.setPhoneNumber(nextEvent.asCharacters().getData());
                         break;
-                    case "companyid":
-                        nextEvent = reader.nextEvent();
-                        customer.setCompany(Integer.valueOf(nextEvent.asCharacters().getData()));
-                        break;
-                    case "addressid":
-                        nextEvent = reader.nextEvent();
-                        customer.setAddress(Integer.valueOf(nextEvent.asCharacters().getData()));
-                        deliveryService.add(customer);
-                        break;
-                    case "companytype":
+                    case "companyType":
                         companyType = new CompanyType();
-
-                        LOG.info("CompanyType");
-                        break;
-                    case "companytypeid":
-                        nextEvent = reader.nextEvent();
-                        companyType.setCompanyTypeId(Integer.valueOf(nextEvent.asCharacters().getData()));
-                        break;
-                    case "companytypename":
+                        Attribute companyTypeId = startElement.getAttributeByName(new QName("id"));
+                        if(companyTypeId != null) {
+                            customer.setCustomerId(Integer.valueOf(companyTypeId.getValue()));
+                            break;
+                        }
+                    case "companyTypeName":
                         nextEvent = reader.nextEvent();
                         companyType.setCompanytypeName(nextEvent.asCharacters().getData());
                         deliveryService.add(companyType);
                         break;
                     case "company":
                         company = new Company();
-                        LOG.info("Company");
+                        Attribute companyId = startElement.getAttributeByName(new QName("id"));
+                        if(companyId != null) {
+                            customer.setCustomerId(Integer.valueOf(companyId.getValue()));
+                            break;
+                        }
                         break;
-                    case "companyids":
-                        nextEvent = reader.nextEvent();
-                        company.setCompanyId(Integer.valueOf(nextEvent.asCharacters().getData()));
-                        break;
-                    case "companyname":
+                    case "companyName":
                         nextEvent = reader.nextEvent();
                         company.setCompanyName(nextEvent.asCharacters().getData());
                         deliveryService.add(company);
                         break;
-                    case "companytypeids":
+                    case "companyTypeId":
                         nextEvent = reader.nextEvent();
                         company.setCompanyId(Integer.valueOf(nextEvent.asCharacters().getData()));
                         break;
-                    case "jobtitle":
+                    case "jobTitle":
                         jobTitle = new JobTitle();
-                        LOG.info("Job title");
+                        Attribute jobTitleId = startElement.getAttributeByName(new QName("id"));
+                        if(jobTitleId != null) {
+                            customer.setCustomerId(Integer.valueOf(jobTitleId.getValue()));
+                            break;
+                        }
                         break;
-                    case "jobtitleid":
-                        nextEvent = reader.nextEvent();
-                        jobTitle.setJobTitleId(Integer.valueOf(nextEvent.asCharacters().getData()));
-                        break;
-                    case "jobtitlename":
+                    case "jobTitleName":
                         nextEvent = reader.nextEvent();
                         jobTitle.setJobTitle(nextEvent.asCharacters().getData());
-//                        LOG.info(nextEvent.asCharacters().getData());
                         deliveryService.add(jobTitle);
                         break;
                     case "country":
-                         country = new Country();
-                        LOG.info("Country");
+                        country = new Country();
+                        Attribute countryId = startElement.getAttributeByName(new QName("id"));
+                        if(countryId != null) {
+                            customer.setCustomerId(Integer.valueOf(countryId.getValue()));
+                            break;
+                        }
                         break;
                     case "countryName":
                         nextEvent = reader.nextEvent();
                         country.setCountryName(nextEvent.asCharacters().getData());
-//                        LOG.info(nextEvent.asCharacters().getData());
                         deliveryService.add(country);
                         break;
                 }

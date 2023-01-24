@@ -1,35 +1,53 @@
 <?xml version="1.0"?>
 <delivery_service>
+    <customers>
+        <customer id="1">
+            <firstName>"John"</firstName>
+            <middleInitial>"O"</middleInitial>
+            <lastName>"Doe"</lastName>
+            <phoneNumber>"(434)449-6545"</phoneNumber>
+        </customer>
+        <customer id="2">
+            <firstName>"Jimmy"</firstName>
+            <middleInitial>"D"</middleInitial>
+            <lastName>"Johns"</lastName>
+            <phoneNumber>"(475)482-3452"</phoneNumber>
+        </customer>
+    </customers>
+    <companyTypes>
+        <companyType id="1">
+            <companyTypeName>"industial"</companyTypeName>
+        </companyType>
+        <companyType id="2">
+            <companyTypeName>"retail"</companyTypeName>
+        </companyType>
+    </companyTypes>
+    <companies>
+        <company id="1">
+            <companyName>"John's Construction"</companyName>
+            <companyTypeId>1</companyTypeId>
+        </company>
+        <company id="2">
+            <companyName>"Walmart"</companyName>
+            <companyTypeId>2</companyTypeId>
+        </company>
+    </companies>
 
-    <customer>
-        <customerid>1</customerid>
-        <firstname>"John"</firstname>
-        <middleinitial>"O"</middleinitial>
-        <lastname>"Doe"</lastname>
-        <phonenumber>"(434)449-6545"</phonenumber>
-        <companyid>1</companyid>
-        <addressid>1</addressid>
-    </customer>
-
-    <companytype>
-        <companytypeid>1</companytypeid>
-        <companytypename>"industial"</companytypename>
-    </companytype>
-
-    <company>
-        <companyids>1</companyids>
-        <companyname> "John's Construction"</companyname>
-        <companytypeids>1</companytypeids>
-    </company>
-
-    <jobtitle>
-        <jobtitleid>1</jobtitleid>
-        <jobtitlename>"Foremen"</jobtitlename>
-    </jobtitle>
-
-    <country>
-        <countryid>1</countryid>
-        <countryname>"Canada"</countryname>
-    </country>
+    <jobTitles>
+        <jobTitle id="1">
+            <jobtitlename>"Foremen"</jobtitlename>
+        </jobTitle>
+        <jobTitle id="2">
+            <jobTitleName>"Manager"</jobTitleName>
+        </jobTitle>
+    </jobTitles>
+    <countries>
+        <country id="1">
+            <countryName>"Canada"</countryName>
+        </country>
+        <country id="2">
+            <countryName>"China"</countryName>
+        </country>
+    </countries>
 
 </delivery_service>

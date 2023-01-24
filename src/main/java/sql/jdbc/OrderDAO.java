@@ -145,4 +145,35 @@ public class OrderDAO implements IOrderDAO {
         }
         return orderList;
     }
+
+    @Override
+    public List<Order> getOrderByDeliveryEmployee(int id) {
+        Connection c = connectionPool.getConnection();
+        String query = "SELECT * FROM orders WHERE delivery_employee_id=(?)";
+        List<Order> orderList = new ArrayList<>();
+        try (PreparedStatement ps = c.prepareStatement(query)) {
+            ps.setInt(1, id);
+            ResultSet rs = ps.getResultSet();
+            while(rs.next()) {
+                Order order = new Order();
+                order.setOrderId((rs.getInt("order_id")));
+                order.setBoxId(rs.getInt("package_id"));
+                order.setStatus(rs.getInt("status_id"));
+                order.setDeliveryEmployeeId(rs.getInt("delivery_employee_id"));
+                order.setAmount(rs.getDouble("amount"));
+            }
+
+        } catch (SQLException e) {
+            LOG.error(e.getMessage());
+        } finally {
+            if (c != null) {
+                try {
+                    connectionPool.releaseConnection(c);
+                } catch (SQLException e) {
+                    LOG.error(e.getMessage());
+                }
+            }
+        }
+        return orderList;
+    }
 }

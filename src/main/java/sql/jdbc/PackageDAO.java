@@ -137,4 +137,28 @@ public class PackageDAO implements IPackageDAO {
         return packageList;
     }
 
+    @Override
+    public Package getPackageByTrackingNumber(String num) {
+        Connection c = connectionPool.getConnection();
+        String query = "SELECT * FROM packages WHERE tracking_number=(?)";
+        Package aPackage = new Package();
+        try (PreparedStatement ps = c.prepareStatement(query)) {
+            ps.setString(1, num);
+            ResultSet rs = ps.getResultSet();
+            aPackage.setTrackingNumber(rs.getString("tracking_number"));
+            aPackage.setWeight(rs.getDouble("weight"));
+            aPackage.setPackageTypeId(rs.getInt("package_type_id"));
+        } catch (SQLException e) {
+            LOG.error(e.getMessage());
+        } finally {
+            if (c != null) {
+                try {
+                    connectionPool.releaseConnection(c);
+                } catch (SQLException e) {
+                    LOG.error(e.getMessage());
+                }
+            }
+        }
+        return aPackage;
+    }
 }
