@@ -23,13 +23,13 @@ public class JAXBMain {
             Marshaller marshaller = jaxbContext.createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
             marshaller.marshal(staff, new File("src/main/resources/delivery_service_output.xml"));
-            LOG.info(JAXBMain.unMarshall());
+            LOG.info(JAXBMain.unmarshall());
         } catch (ParseException | JAXBException e) {
             LOG.error(e.getMessage());
         }
     }
 
-    public static Staff unMarshall() throws JAXBException {
+    public static Staff unmarshall() throws JAXBException {
         Staff staff = new Staff();
         try{
         JAXBContext context = JAXBContext.newInstance(Staff.class);
