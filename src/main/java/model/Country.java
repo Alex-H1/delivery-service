@@ -1,17 +1,31 @@
 package model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
+
+@XmlRootElement
 public class Country {
+    @JsonProperty
     private Integer countryId;
+    @JsonProperty
     private String countryName;
 
     public Country() {
 
     }
 
+    public Country(Integer countryId, String countryName) {
+        this.countryId = countryId;
+        this.countryName = countryName;
+    }
+
     public Integer getCountryId() {
         return countryId;
     }
 
+    @XmlTransient
     public void setCountryId(Integer countryId) {
         this.countryId = countryId;
     }

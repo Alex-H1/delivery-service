@@ -1,18 +1,37 @@
 package model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
+
+@XmlRootElement
 public class Company {
+    @JsonProperty
     private Integer companyId;
+    @JsonProperty
     private String companyName;
+    @JsonProperty
     private Integer companyType;
 
     public Company() {
 
     }
 
+    public Company(Integer companyId, String companyName, Integer companyType) {
+        this.companyId = companyId;
+        this.companyName = companyName;
+        this.companyType = companyType;
+    }
+
+    public Company(int i, String s) {
+    }
+
     public Integer getCompanyId() {
         return companyId;
     }
 
+    @XmlTransient
     public void setCompanyId(Integer companyId) {
         this.companyId = companyId;
     }

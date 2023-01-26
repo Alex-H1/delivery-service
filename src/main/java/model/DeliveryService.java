@@ -1,46 +1,96 @@
 package model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import java.util.List;
-@XmlRootElement(name = "deliveryService")
-@XmlType(propOrder = {"customerList", "staffList"})
+
+@XmlRootElement(name = "delivery_service")
+@XmlType(propOrder = {"customers", "staff", "companies", "companyTypes", "countries"})
 public class DeliveryService {
-    private List<Customer> customerList;
-    private List<Staff> staffList;
+    @JsonProperty
+    private List<Customer> customers;
+    @JsonProperty
+    private List<Staff> Staff;
+    @JsonProperty
+    private List<Company> companies;
+    @JsonProperty
+    private List<CompanyType> companyTypes;
+    @JsonProperty
+    private List<Country> countries;
 
-    public DeliveryService(List<Customer> customerList, List<Staff> staffList) {
-        this.customerList = customerList;
-        this.staffList = staffList;
+    public DeliveryService(List<Customer> customers, List<model.Staff> staff, List<Company> companies, List<CompanyType> companyTypes, List<Country> countries) {
+        this.customers = customers;
+        this.Staff = staff;
+        this.companies = companies;
+        this.companyTypes = companyTypes;
+        this.countries = countries;
     }
 
-    public List<Customer> getCustomerList() {
-        return customerList;
+    public DeliveryService() {
     }
 
+    public List<Customer> getCustomers() {
+        return customers;
+    }
     @XmlElementWrapper(name = "customers")
     @XmlElement(name = "customer", type = Customer.class)
-    public void setCustomerList(List<Customer> customerList) {
-        this.customerList = customerList;
+
+    public void setCustomers(List<Customer> customers) {
+        this.customers = customers;
     }
 
-    public List<Staff> getStaffList() {
-        return staffList;
+    public List<model.Staff> getStaff() {
+        return Staff;
     }
 
     @XmlElementWrapper(name = "staff")
-    @XmlElement(name = "staff", type = Staff.class)
-    public void setStaffList(List<Staff> staffList) {
-        this.staffList = staffList;
+    @XmlElement(name = "staff")
+    public void setStaff(List<model.Staff> staff) {
+        Staff = staff;
+    }
+
+    public List<Company> getCompanies() {
+        return companies;
+    }
+
+    @XmlElementWrapper(name = "companies")
+    @XmlElement(name = "comapany", type = Company.class)
+    public void setCompanies(List<Company> companies) {
+        this.companies = companies;
+    }
+
+    public List<CompanyType> getCompanyTypes() {
+        return companyTypes;
+    }
+
+    @XmlElementWrapper(name = "companyTypes")
+    @XmlElement(name = "companyTypes")
+    public void setCompanyTypes(List<CompanyType> companyTypes) {
+        this.companyTypes = companyTypes;
+    }
+
+    public List<Country> getCountries() {
+        return countries;
+    }
+
+    @XmlElementWrapper(name = "countries")
+    @XmlElement(name = "country", type = Country.class)
+    public void setCountries(List<Country> countries) {
+        this.countries = countries;
     }
 
     @Override
     public String toString() {
         return "DeliveryService{" +
-                "customerList=" + customerList +
-                ", staffList=" + staffList +
+                "customers=" + customers +
+                ", Staff=" + Staff +
+                ", companies=" + companies +
+                ", companyTypes=" + companyTypes +
+                ", countries=" + countries +
                 '}';
     }
 }

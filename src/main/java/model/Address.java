@@ -5,8 +5,6 @@ public class Address {
     private String address;
     private Double postalCode;
     private Integer city;
-
-
     private int addressType;
 
 

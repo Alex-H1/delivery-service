@@ -1,7 +1,57 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<staff>
-    <dateHired>2004-05-23T00:00:00-07:00</dateHired>
-    <firstName>Jane</firstName>
-    <jobTitleId>3</jobTitleId>
-    <lastName>June</lastName>
-</staff>
+<delivery_service>
+    <customers>
+        <customer>
+            <firstName>John</firstName>
+            <lastName>Doe</lastName>
+            <middleInitial>O</middleInitial>
+            <phoneNumber>(434)449-6545</phoneNumber>
+        </customer>
+        <customer>
+            <firstName>Jimmy</firstName>
+            <lastName>Johns</lastName>
+            <middleInitial>D</middleInitial>
+            <phoneNumber>(475)482-3542</phoneNumber>
+        </customer>
+    </customers>
+    <staff>
+        <staff>
+            <dateHired>2004-05-23T00:00:00-07:00</dateHired>
+            <firstName>Jane</firstName>
+            <jobTitleId>3</jobTitleId>
+            <lastName>June</lastName>
+        </staff>
+        <staff>
+            <dateHired>2004-05-23T00:00:00-07:00</dateHired>
+            <firstName>Jane</firstName>
+            <jobTitleId>3</jobTitleId>
+            <lastName>June</lastName>
+        </staff>
+    </staff>
+    <companies>
+        <comapany>
+            <companyName>John's Construction</companyName>
+            <companyType>1</companyType>
+        </comapany>
+        <comapany>
+            <companyName>Walmart</companyName>
+            <companyType>2</companyType>
+        </comapany>
+    </companies>
+    <companyTypes>
+        <companyTypes>
+            <companytypeName>industrial</companytypeName>
+        </companyTypes>
+        <companyTypes>
+            <companytypeName>retail</companytypeName>
+        </companyTypes>
+    </companyTypes>
+    <countries>
+        <country>
+            <countryName>Canada</countryName>
+        </country>
+        <country>
+            <countryName>China</countryName>
+        </country>
+    </countries>
+</delivery_service>

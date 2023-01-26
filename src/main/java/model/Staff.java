@@ -1,15 +1,24 @@
 package model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 import java.util.Date;
 
 @XmlRootElement
 public class Staff {
+    @JsonProperty
     private Integer employeeId;
+    @JsonProperty
     private String firstName;
+    @JsonProperty
     private String lastName;
+    @JsonProperty
     private Integer jobTitleId;
+    @JsonProperty
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern =" yyyyy-MM-dd")
     private Date dateHired;
 
     public Staff() {

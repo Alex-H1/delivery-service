@@ -1,21 +1,29 @@
 package model;
 
-import java.util.Date;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
+
+@XmlRootElement
 public class Customer {
+    @JsonProperty
     private Integer customerId;
+    @JsonProperty
     private String firstName;
+    @JsonProperty
     private String middleInitial;
+    @JsonProperty
     private String lastName;
+    @JsonProperty
     private String phoneNumber;
+    @JsonProperty
     private Integer address;
+    @JsonProperty
     private Integer company;
-    private Date dateJoined;
 
-    public Customer(Integer customerId, String firstName,
-                    String middleInitial, String lastName,
-                    String phoneNumber, Integer address,
-                    Integer company, Date dateJoined) {
+
+    public Customer(Integer customerId, String firstName, String middleInitial, String lastName, String phoneNumber, Integer address, Integer company) {
         this.customerId = customerId;
         this.firstName = firstName;
         this.middleInitial = middleInitial;
@@ -23,17 +31,17 @@ public class Customer {
         this.phoneNumber = phoneNumber;
         this.address = address;
         this.company = company;
-        this.dateJoined = dateJoined;
     }
 
     public Customer() {
 
     }
 
+
     public Integer getCustomerId() {
         return customerId;
     }
-
+    @XmlTransient
     public void setCustomerId(Integer customerId) {
         this.customerId = customerId;
     }
@@ -86,13 +94,6 @@ public class Customer {
         this.company = company;
     }
 
-    public Date getDateJoined() {
-        return dateJoined;
-    }
-
-    public void setDateJoined(Date dateJoined) {
-        this.dateJoined = dateJoined;
-    }
 
     @Override
     public String toString() {
