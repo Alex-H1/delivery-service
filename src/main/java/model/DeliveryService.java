@@ -11,10 +11,11 @@ import java.util.List;
 @XmlRootElement(name = "delivery_service")
 @XmlType(propOrder = {"customers", "staff", "companies", "companyTypes", "countries"})
 public class DeliveryService {
+
     @JsonProperty
     private List<Customer> customers;
     @JsonProperty
-    private List<Staff> Staff;
+    private List<Staff> staff;
     @JsonProperty
     private List<Company> companies;
     @JsonProperty
@@ -22,9 +23,9 @@ public class DeliveryService {
     @JsonProperty
     private List<Country> countries;
 
-    public DeliveryService(List<Customer> customers, List<model.Staff> staff, List<Company> companies, List<CompanyType> companyTypes, List<Country> countries) {
+    public DeliveryService(List<Customer> customers, List<Staff> staff, List<Company> companies, List<CompanyType> companyTypes, List<Country> countries) {
         this.customers = customers;
-        this.Staff = staff;
+        this.staff = staff;
         this.companies = companies;
         this.companyTypes = companyTypes;
         this.countries = countries;
@@ -36,21 +37,21 @@ public class DeliveryService {
     public List<Customer> getCustomers() {
         return customers;
     }
+
     @XmlElementWrapper(name = "customers")
     @XmlElement(name = "customer", type = Customer.class)
-
     public void setCustomers(List<Customer> customers) {
         this.customers = customers;
     }
 
     public List<model.Staff> getStaff() {
-        return Staff;
+        return staff;
     }
 
     @XmlElementWrapper(name = "staff")
     @XmlElement(name = "staff")
     public void setStaff(List<model.Staff> staff) {
-        Staff = staff;
+        staff = staff;
     }
 
     public List<Company> getCompanies() {
@@ -87,7 +88,7 @@ public class DeliveryService {
     public String toString() {
         return "DeliveryService{" +
                 "customers=" + customers +
-                ", Staff=" + Staff +
+                ", Staff=" + staff +
                 ", companies=" + companies +
                 ", companyTypes=" + companyTypes +
                 ", countries=" + countries +

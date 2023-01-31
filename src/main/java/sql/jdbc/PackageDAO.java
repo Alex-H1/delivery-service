@@ -1,7 +1,6 @@
 package sql.jdbc;
 
 import model.Package;
-import model.PackageType;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import sql.ConnectionPool;

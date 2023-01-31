@@ -7,18 +7,19 @@ import javax.xml.bind.annotation.XmlTransient;
 
 @XmlRootElement
 public class Country {
+
     @JsonProperty
     private Integer countryId;
     @JsonProperty
     private String countryName;
 
-    public Country() {
-
-    }
-
     public Country(Integer countryId, String countryName) {
         this.countryId = countryId;
         this.countryName = countryName;
+    }
+
+    public Country() {
+
     }
 
     public Integer getCountryId() {

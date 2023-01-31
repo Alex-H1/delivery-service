@@ -1,10 +1,12 @@
 package model;
+
 public class Package {
     private Integer orderId;
     private Integer packageId;
     private String trackingNumber;
     private Integer packageTypeId;
     private Double weight;
+
     public Package() {
 
     }
@@ -17,7 +19,6 @@ public class Package {
         this.packageTypeId = packageTypeId;
     }
 
-
     public Integer getOrderId() {
         return orderId;
     }
@@ -25,8 +26,6 @@ public class Package {
     public void setOrderId(Integer orderId) {
         this.orderId = orderId;
     }
-
-
 
     public Integer getPackageId() {
         return packageId;

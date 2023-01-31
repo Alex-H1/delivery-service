@@ -19,17 +19,17 @@ public class JAXBMain {
     private static final Logger LOG = LogManager.getLogger(JAXBMain.class);
 
     public static void main(String[] args) throws ParseException, JAXBException {
-       List<Customer> customerList = new ArrayList<>();
-       List<Staff> staffList = new ArrayList<>();
-       List<Company> companyList = new ArrayList<>();
-       List<CompanyType> companyTypeList = new ArrayList<>();
-       List<Country> countryList = new ArrayList<>();
+        List<Customer> customerList = new ArrayList<>();
+        List<Staff> staffList = new ArrayList<>();
+        List<Company> companyList = new ArrayList<>();
+        List<CompanyType> companyTypeList = new ArrayList<>();
+        List<Country> countryList = new ArrayList<>();
 
-        Customer customer1 = new Customer(1, "John", "O", "Doe", "(434)449-6545",1,2);
-        Customer customer2 = new Customer(2, "Jimmy", "D", "Johns", "(475)482-3542",1,2);
+        Customer customer1 = new Customer(1, "John", "O", "Doe", "(434)449-6545", 1, 2);
+        Customer customer2 = new Customer(2, "Jimmy", "D", "Johns", "(475)482-3542", 1, 2);
         Staff staff1 = new Staff(1, "Jane", "June", 3, new SimpleDateFormat("dd-MM-yyyy").parse("23-05-2004"));
         Staff staff2 = new Staff(2, "Jane", "June", 3, new SimpleDateFormat("dd-MM-yyyy").parse("23-05-2004"));
-        Company company1 = new Company(1, "John's Construction",1);
+        Company company1 = new Company(1, "John's Construction", 1);
         Company company2 = new Company(2, "Walmart", 2);
         CompanyType companyType1 = new CompanyType(1, "industrial");
         CompanyType companyType2 = new CompanyType(2, "retail");
@@ -50,12 +50,12 @@ public class JAXBMain {
         DeliveryService deliveryService = new DeliveryService(customerList, staffList, companyList, companyTypeList, countryList);
 
         try {
-            JAXBContext jaxbContext = JAXBContext.newInstance(DeliveryService.class, Customer.class ,Staff.class, Country.class, Country.class);
+            JAXBContext jaxbContext = JAXBContext.newInstance(DeliveryService.class, Customer.class, Staff.class, Country.class, Country.class);
             Marshaller marshaller = jaxbContext.createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
             marshaller.marshal(deliveryService, new File("src/main/resources/delivery_service_output.xml"));
             LOG.info(JAXBMain.unmarshall());
-        } catch ( JAXBException e) {
+        } catch (JAXBException e) {
             e.printStackTrace();
             LOG.error(e.getMessage());
         }
@@ -63,10 +63,10 @@ public class JAXBMain {
 
     public static DeliveryService unmarshall() throws JAXBException {
         DeliveryService deliveryService1 = new DeliveryService();
-        try{
-        JAXBContext context = JAXBContext.newInstance(DeliveryService.class);
+        try {
+            JAXBContext context = JAXBContext.newInstance(DeliveryService.class);
             deliveryService1 = (DeliveryService) context.createUnmarshaller().unmarshal(new FileReader("src/main/resources/delivery_service_output.xml"));
-    } catch (FileNotFoundException e) {
+        } catch (FileNotFoundException e) {
             LOG.error(e.getMessage());
         }
         return deliveryService1;

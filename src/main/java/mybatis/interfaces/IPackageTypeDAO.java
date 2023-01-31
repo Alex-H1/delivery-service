@@ -1,10 +1,10 @@
-package sql;
+package mybatis.interfaces;
 
 import model.PackageType;
 
 import java.util.List;
 
-public interface IPackageTypeDAO extends IBaseDAO<PackageType> {
+public interface IPackageTypeDAO {
 
     List<PackageType> getPackageTypeByName(String name);
 

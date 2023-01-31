@@ -1,7 +1,9 @@
 package model;
 
 import java.util.Date;
+
 public class Order {
+
     private Integer orderId;
     private Integer customerId;
     private Integer boxId;
@@ -22,6 +24,7 @@ public class Order {
 
     public Order() {
     }
+
     public Integer getOrderId() {
         return orderId;
     }

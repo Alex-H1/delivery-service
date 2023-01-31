@@ -139,7 +139,6 @@ public class StaffDAO implements IStaffDAO {
     }
 
 
-
     public List<Staff> getStaffByName(String name) throws SQLException {
         Connection c = connectionPool.getConnection();
         String query = "SELECT * FROM Staff WHERE first_name=(?)";

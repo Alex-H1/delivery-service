@@ -1,6 +1,7 @@
 package model;
 
 public class AddressType {
+
     private int addressTypeId;
     private String addressType;
 

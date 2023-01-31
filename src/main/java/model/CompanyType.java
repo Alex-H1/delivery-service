@@ -7,6 +7,7 @@ import javax.xml.bind.annotation.XmlTransient;
 
 @XmlRootElement
 public class CompanyType {
+
     @JsonProperty
     private Integer companyTypeId;
     @JsonProperty
@@ -24,6 +25,7 @@ public class CompanyType {
     public Integer getCompanyTypeId() {
         return companyTypeId;
     }
+
     @XmlTransient
     public void setCompanyTypeId(Integer companyTypeId) {
         this.companyTypeId = companyTypeId;

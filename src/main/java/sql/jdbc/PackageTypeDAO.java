@@ -161,7 +161,7 @@ public class PackageTypeDAO implements IPackageTypeDAO {
             ps.setString(1, name);
             ResultSet rs = ps.getResultSet();
             ps.execute();
-            while(rs.next()) {
+            while (rs.next()) {
                 PackageType packageType = new PackageType();
                 packageType.setPackageTypeId(rs.getInt("package_type_id"));
                 packageType.setPackageTypeName(rs.getString("package_type_name"));

@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface IBaseDAO<Entity> {
+
     void saveEntity(Entity model) throws SQLException;
 
     Entity getEntityByID(int id) throws SQLException;

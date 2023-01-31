@@ -36,7 +36,7 @@ public class StaxParser {
                     case "customer":
                         customer = new Customer();
                         Attribute id = startElement.getAttributeByName(new QName("id"));
-                        if(id != null){
+                        if (id != null) {
                             customer.setCustomerId(Integer.valueOf(id.getValue()));
                         }
                         break;
@@ -59,7 +59,7 @@ public class StaxParser {
                     case "companyType":
                         companyType = new CompanyType();
                         Attribute companyTypeId = startElement.getAttributeByName(new QName("id"));
-                        if(companyTypeId != null) {
+                        if (companyTypeId != null) {
                             customer.setCustomerId(Integer.valueOf(companyTypeId.getValue()));
                             break;
                         }
@@ -71,7 +71,7 @@ public class StaxParser {
                     case "company":
                         company = new Company();
                         Attribute companyId = startElement.getAttributeByName(new QName("id"));
-                        if(companyId != null) {
+                        if (companyId != null) {
                             customer.setCustomerId(Integer.valueOf(companyId.getValue()));
                             break;
                         }
@@ -88,7 +88,7 @@ public class StaxParser {
                     case "jobTitle":
                         jobTitle = new JobTitle();
                         Attribute jobTitleId = startElement.getAttributeByName(new QName("id"));
-                        if(jobTitleId != null) {
+                        if (jobTitleId != null) {
                             customer.setCustomerId(Integer.valueOf(jobTitleId.getValue()));
                             break;
                         }
@@ -101,7 +101,7 @@ public class StaxParser {
                     case "country":
                         country = new Country();
                         Attribute countryId = startElement.getAttributeByName(new QName("id"));
-                        if(countryId != null) {
+                        if (countryId != null) {
                             customer.setCustomerId(Integer.valueOf(countryId.getValue()));
                             break;
                         }

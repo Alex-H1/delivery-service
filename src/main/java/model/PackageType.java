@@ -1,6 +1,7 @@
 package model;
 
 public class PackageType {
+
     private Integer packageTypeId;
     private String packageTypeName;
 

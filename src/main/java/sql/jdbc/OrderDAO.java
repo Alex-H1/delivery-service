@@ -154,7 +154,7 @@ public class OrderDAO implements IOrderDAO {
         try (PreparedStatement ps = c.prepareStatement(query)) {
             ps.setInt(1, id);
             ResultSet rs = ps.getResultSet();
-            while(rs.next()) {
+            while (rs.next()) {
                 Order order = new Order();
                 order.setOrderId((rs.getInt("order_id")));
                 order.setBoxId(rs.getInt("package_id"));

@@ -15,15 +15,15 @@ import java.io.IOException;
 public class XMLValidator {
     private static final Logger LOG = LogManager.getLogger(XMLValidator.class);
 
-    public static boolean ValidateXML(String xsdPath, String xmlPath){
-        try{
+    public static boolean validateXML(String xsdPath, String xmlPath) {
+        try {
             SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
             Schema schema = factory.newSchema(new File(xsdPath));
             Validator validator = schema.newValidator();
             validator.validate(new StreamSource(new File(xmlPath)));
 
 
-        } catch (SAXException | IOException e ) {
+        } catch (SAXException | IOException e) {
             LOG.error(e.getMessage());
         }
         return true;

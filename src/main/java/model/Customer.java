@@ -7,6 +7,7 @@ import javax.xml.bind.annotation.XmlTransient;
 
 @XmlRootElement
 public class Customer {
+
     @JsonProperty
     private Integer customerId;
     @JsonProperty
@@ -22,7 +23,6 @@ public class Customer {
     @JsonProperty
     private Integer company;
 
-
     public Customer(Integer customerId, String firstName, String middleInitial, String lastName, String phoneNumber, Integer address, Integer company) {
         this.customerId = customerId;
         this.firstName = firstName;
@@ -37,10 +37,10 @@ public class Customer {
 
     }
 
-
     public Integer getCustomerId() {
         return customerId;
     }
+
     @XmlTransient
     public void setCustomerId(Integer customerId) {
         this.customerId = customerId;
@@ -93,7 +93,6 @@ public class Customer {
     public void setCompany(Integer company) {
         this.company = company;
     }
-
 
     @Override
     public String toString() {

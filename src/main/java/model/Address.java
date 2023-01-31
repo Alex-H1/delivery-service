@@ -1,12 +1,12 @@
 package model;
 
 public class Address {
+
     private Integer addressId;
     private String address;
     private Double postalCode;
     private Integer city;
     private int addressType;
-
 
     public Address() {
 

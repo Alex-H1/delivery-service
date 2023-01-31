@@ -13,7 +13,7 @@ public class Runner {
 
     public static void main(String[] args) throws XMLStreamException, FileNotFoundException {
         StaxParser.read();
-        LOG.info("xml is valid: " + XMLValidator.ValidateXML("src/main/resources/deliveryService.xsd", "src/main/resources/deliveryService.xml"));
+        LOG.info("xml is valid: " + XMLValidator.validateXML("src/main/resources/deliveryService.xsd", "src/main/resources/deliveryService.xml"));
 
     }
 }
