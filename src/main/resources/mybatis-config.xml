@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//sql.mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <properties resource="db.properties"/>
+    <typeAliases>
+        <typeAlias alias="Address" type="com.example.model.Address"/>
+        <typeAlias alias="AddressType" type="com.example.model.AddressType"/>
+        <typeAlias alias="City" type="com.example.model.City"/>
+        <typeAlias alias="Company" type="com.example.model.Company"/>
+        <typeAlias alias="CompanyType" type="com.example.model.CompanyType"/>
+        <typeAlias alias="Country" type="com.example.model.Country"/>
+        <typeAlias alias="Customer" type="com.example.model.Customer"/>
+        <typeAlias alias="JobTitle" type="com.example.model.JobTitle"/>
+        <typeAlias alias="Order" type="com.example.model.Order"/>
+        <typeAlias alias="Package" type="com.example.model.Package"/>
+        <typeAlias alias="Address" type="com.example.model.Address"/>
+        <typeAlias alias="Address" type="com.example.model.Address"/>
+        <typeAlias alias="Address" type="com.example.model.Address"/>
+    </typeAliases>
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"></transactionManager>
+            <dataSource type="POOLED">
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+       <mapper resource="mapper/address-mapper.xml"/>
+        <mapper resource="mapper/addressType-mapper.xml"/>
+        <mapper resource="mapper/city-mapper.xml"/>
+        <mapper resource="mapper/company-mapper.xml"/>
+        <mapper resource="mapper/companyType-mapper.xml"/>
+        <mapper resource="mapper/country-mapper.xml"/>
+        <mapper resource="mapper/customer-mapper.xml"/>
+        <mapper resource="mapper/jobTitle-mapper.xml"/>
+        <mapper resource="mapper/order-mapper.xml"/>
+        <mapper resource="mapper/package-mapper.xml"/>
+        <mapper resource="mapper/packageType-mapper.xml"/>
+        <mapper resource="mapper/staff-mapper.xml"/>
+        <mapper resource="mapper/status-mapper.xml"/>
+    </mappers>
+</configuration>

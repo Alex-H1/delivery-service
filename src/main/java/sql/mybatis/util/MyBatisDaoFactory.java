@@ -1,4 +1,4 @@
-package mybatis.util;
+package sql.mybatis.util;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -11,16 +11,16 @@ import java.io.Reader;
 
 public class MyBatisDaoFactory {
 
-    private final static Logger log = LogManager.getLogger(MyBatisDaoFactory.class);
+    private final static Logger LOG = LogManager.getLogger(MyBatisDaoFactory.class);
     private final static MyBatisDaoFactory myBatisDaoFactory = new MyBatisDaoFactory();
     private static SqlSessionFactory sqlSessionFactory;
 
     private MyBatisDaoFactory() {
         try {
-            Reader reader = Resources.getResourceAsReader("mybatis-config.xml");
+            Reader reader = Resources.getResourceAsReader("sql.mybatis-config.xml");
             sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
         } catch (IOException e) {
-            log.error("Exception while reading configuration", e);
+            LOG.error("Exception while reading configuration", e);
         }
     }
 

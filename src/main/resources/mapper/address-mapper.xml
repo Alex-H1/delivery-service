@@ -1,0 +1,38 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.sql.IAddressDAO">
+    <resultMap type="Address" id="AddressResultMap" autoMapping="false">
+        <result property="addressId" column="address_id"/>
+        <result property="address" column="address"/>
+        <result property="postalCode" column="postal_code"/>
+        <result property="addressType" column="address_type_id"/>
+    </resultMap>
+    <insert id="createEntity" keyProperty="address_id">
+        INSERT INTO addresses (address_id, address, postal_code, address_type_id)
+        VALUES (#{address_id}, #{address}, #{postal_code}, #{address_type_id});
+    </insert>
+    <update id="updateEntity" parameterType = "Address">
+        UPDATE addresses SET
+                               address_id = #{addressId},
+                               address = #{address},
+                               postal_code = #{postalCode},
+                               address_type_id = #{addressType}
+        WHERE address_id = #{addressId};
+    </update>
+    <delete id = "removeEntity" parameterType = "int">
+        DELETE from address WHERE address_id = #{id};
+    </delete>
+    <select id = "getEntityById" parameterType = "int" resultMap = "AddressResultMap">
+        SELECT * FROM addresses WHERE address_id = #{id};
+    </select>
+    <select id = "getAll" resultMap = "AddressResultMap">
+        SELECT * FROM addresses;
+    </select>
+    <select id = "getAddressByAddress" parameterType="String" resultMap = "AddressResultMap">
+        SELECT * FROM addresses WHERE address = #{address};
+    </select>
+</mapper>
