@@ -4,16 +4,16 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.example.sql.IJobTitleDAO">
-    <resultMap type="JobTitlte" id="JobTitleResultMap" autoMapping="false">
+<mapper namespace="sql.IJobTitleDAO">
+    <resultMap type="JobTitle" id="JobTitleResultMap" autoMapping="false">
         <result property="jobTitleID" column="job_title_id"/>
         <result property="jobTitle" column="job_title"/>
     </resultMap>
-    <insert id="createEntity" keyProperty="job_title_id">
+    <insert id="saveEntity" keyProperty="job_title_id">
         INSERT INTO job_title (job_title)
         VALUES (#{job_tilte});
     </insert>
-    <update id="updateEntity" parameterType = "Jobtitle">
+    <update id="updateEntity" parameterType = "JobTitle">
         UPDATE job_title SET
                              job_title = #{jobTitle}
             =        WHERE job_title_id = #{jobTitleId};

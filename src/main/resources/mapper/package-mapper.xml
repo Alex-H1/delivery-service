@@ -4,14 +4,14 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.example.sql.IPackageDAO">
+<mapper namespace="sql.IPackageDAO">
     <resultMap type="Package" id="PackageResultMap" autoMapping="false">
         <result property="packageId" column="package_id"/>
         <result property="trackingNumber" column="tracking_number"/>
         <result property="packageTypeId" column="package_type_id"/>
         <result property="weight" column="weight"/>
    </resultMap>
-    <insert id="createEntity" keyProperty="package_id">
+    <insert id="saveEntity" keyProperty="package_id">
         INSERT INTO packages (tracking_number, package_type_id, weight)
         VALUES (#{trackingNumber}, #{packageTypeId}, #{weight});
     </insert>

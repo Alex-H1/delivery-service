@@ -4,16 +4,16 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.example.sql.ICompanyDAO">
+<mapper namespace="sql.ICompanyTypeDAO">
     <resultMap type="CompanyType" id="CompanyTypeResultMap" autoMapping="false">
         <result property="companyTypeId" column="company_type_id"/>
         <result property="companyTypeName" column="company_Type_name"/>
     </resultMap>
-    <insert id="createEntity" keyProperty="company_type_id">
+    <insert id="saveEntity" keyProperty="company_type_id">
         INSERT INTO company_types (company_type_name)
         VALUES (#{companyTypeName});
     </insert>
-    <update id="updateEntity" parameterType = "Company">
+    <update id="updateEntity" parameterType = "CompanyType">
         UPDATE company_types SET
                              company_type_name = #{companyTypeName}
         WHERE company_type_id = #{companyTypeId};
@@ -21,13 +21,13 @@
     <delete id = "removeEntity" parameterType = "int">
         DELETE from company_types WHERE company_type_id = #{id};
     </delete>
-    <select id = "getEntityById" parameterType = "int" resultMap = "CompanyResultMap">
+    <select id = "getEntityById" parameterType = "int" resultMap = "CompanyTypeResultMap">
         SELECT * FROM company_types WHERE company_type_id = #{id};
     </select>
-    <select id = "getAll" resultMap = "CompanyResultMap">
+    <select id = "getAll" resultMap = "CompanyTypeResultMap">
         SELECT * FROM company_types;
     </select>
-    <select id = "getCompanyTypeByName" parameterType="String" resultMap = "CompanyResultMap">
+    <select id = "getCompanyTypeByName" parameterType="String" resultMap = "CompanyTypeResultMap">
         SELECT * FROM company_types WHERE company_type_name = #{companyName};
     </select>
 </mapper>

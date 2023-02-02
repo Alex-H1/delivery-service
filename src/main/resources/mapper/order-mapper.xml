@@ -4,7 +4,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.example.sql.IOrderDAO">
+<mapper namespace="sql.IOrderDAO">
     <resultMap type="Order" id="OrderResultMap" autoMapping="false">
         <result property="orderId" column="order_id"/>
         <result property="customerId" column="customer_id"/>
@@ -13,7 +13,7 @@
         <result property="deliveryEmployeeId" column="delivery_employee_id"/>
         <result property="amount" column="amount"/>
     </resultMap>
-    <insert id="createEntity" keyProperty="order_id">
+    <insert id="saveEntity" keyProperty="order_id">
         INSERT INTO orders (customer_id, package_id, status_id, delivery_employee_id, amount)
         VALUES (#{customerId}, #{boxId}, #{status}, #{deliveryEmployeeId}, #{amount});
     </insert>

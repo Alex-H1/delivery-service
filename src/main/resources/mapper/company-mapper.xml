@@ -4,13 +4,13 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.example.sql.ICompanyDAO">
+<mapper namespace="sql.ICompanyDAO">
     <resultMap type="Company" id="CompanyResultMap" autoMapping="false">
         <result property="companyId" column="company_id"/>
         <result property="companyName" column="company_name"/>
         <result property="companyType" column="company_type_id"/>
     </resultMap>
-    <insert id="createEntity" keyProperty="company_id">
+    <insert id="saveEntity" keyProperty="company_id">
         INSERT INTO companies (company_name, company_type_id)
         VALUES (#{companyName}, #{companyType});
     </insert>

@@ -5,19 +5,19 @@
 <configuration>
     <properties resource="db.properties"/>
     <typeAliases>
-        <typeAlias alias="Address" type="com.example.model.Address"/>
-        <typeAlias alias="AddressType" type="com.example.model.AddressType"/>
-        <typeAlias alias="City" type="com.example.model.City"/>
-        <typeAlias alias="Company" type="com.example.model.Company"/>
-        <typeAlias alias="CompanyType" type="com.example.model.CompanyType"/>
-        <typeAlias alias="Country" type="com.example.model.Country"/>
-        <typeAlias alias="Customer" type="com.example.model.Customer"/>
-        <typeAlias alias="JobTitle" type="com.example.model.JobTitle"/>
-        <typeAlias alias="Order" type="com.example.model.Order"/>
-        <typeAlias alias="Package" type="com.example.model.Package"/>
-        <typeAlias alias="Address" type="com.example.model.Address"/>
-        <typeAlias alias="Address" type="com.example.model.Address"/>
-        <typeAlias alias="Address" type="com.example.model.Address"/>
+        <typeAlias alias="Address" type="model.Address"/>
+        <typeAlias alias="AddressType" type="model.AddressType"/>
+        <typeAlias alias="City" type="model.City"/>
+        <typeAlias alias="Company" type="model.Company"/>
+        <typeAlias alias="CompanyType" type="model.CompanyType"/>
+        <typeAlias alias="Country" type="model.Country"/>
+        <typeAlias alias="Customer" type="model.Customer"/>
+        <typeAlias alias="JobTitle" type="model.JobTitle"/>
+        <typeAlias alias="Order" type="model.Order"/>
+        <typeAlias alias="Package" type="model.Package"/>
+        <typeAlias alias="PackageType" type="model.PackageType"/>
+        <typeAlias alias="Staff" type="model.Staff"/>
+        <typeAlias alias="Status" type="model.Status"/>
     </typeAliases>
     <environments default="development">
         <environment id="development">
@@ -25,12 +25,13 @@
             <dataSource type="POOLED">
                 <property name="driver" value="${driver}"/>
                 <property name="url" value="${url}"/>
-                <property name="username" value="${username}"/>
+                <property name="username" value="${user}"/>
                 <property name="password" value="${password}"/>
             </dataSource>
         </environment>
     </environments>
     <mappers>
+        <mapper class="sql.ICustomerDAO"/>
        <mapper resource="mapper/address-mapper.xml"/>
         <mapper resource="mapper/addressType-mapper.xml"/>
         <mapper resource="mapper/city-mapper.xml"/>

@@ -3,6 +3,7 @@ package sql.mybatis;
 import model.AddressType;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
+import sql.IAddressDAO;
 import sql.IAddressTypeDAO;
 import sql.mybatis.util.MyBatisSqlFactory;
 
@@ -27,6 +28,7 @@ public class AddressTypeDAO implements IAddressTypeDAO {
     public void saveEntity(AddressType model) throws SQLException {
         try(SqlSession session = sqlSessionFactory.openSession()){
             IAddressTypeDAO addressTypeDAO = session.getMapper(IAddressTypeDAO.class);
+            addressTypeDAO.saveEntity(model);
             session.commit();
         }
     }
@@ -43,16 +45,29 @@ public class AddressTypeDAO implements IAddressTypeDAO {
 
     @Override
     public void updateEntity(AddressType model) throws SQLException {
-
+        try(SqlSession session = sqlSessionFactory.openSession()){
+            IAddressTypeDAO addressTypeDAO = session.getMapper(IAddressTypeDAO.class);
+            addressTypeDAO.updateEntity(model);
+            session.commit();
+        }
     }
 
     @Override
     public void removeEntity(int id) throws SQLException {
-
+        try(SqlSession session = sqlSessionFactory.openSession()){
+            IAddressTypeDAO addressTypeDAO = session.getMapper(IAddressTypeDAO.class);
+            addressTypeDAO.removeEntity(id);
+            session.commit();
+        }
     }
 
     @Override
     public List<AddressType> getAll() throws SQLException {
-        return null;
+       List<AddressType> addressTypeList;
+       try(SqlSession session = sqlSessionFactory.openSession()){
+           IAddressTypeDAO addressTypeDAO = session.getMapper(IAddressTypeDAO.class);
+           addressTypeList = addressTypeDAO.getAll();
+       }
+        return addressTypeList;
     }
 }

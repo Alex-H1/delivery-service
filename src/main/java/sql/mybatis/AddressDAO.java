@@ -28,6 +28,7 @@ public class AddressDAO implements IAddressDAO {
     public void saveEntity(Address model) throws SQLException {
         try(SqlSession session = sqlSessionFactory.openSession()){
             IAddressDAO addressDAO = session.getMapper(IAddressDAO.class);
+            addressDAO.saveEntity(model);
             session.commit();
         }
     }

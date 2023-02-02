@@ -22,6 +22,13 @@ public class Staff {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = " yyyyy-MM-dd")
     private Date dateHired;
 
+    public Staff(Integer employeeId, String firstName, String lastName, Integer jobTitleId) {
+        this.employeeId = employeeId;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.jobTitleId = jobTitleId;
+    }
+
     public Staff() {
 
     }
