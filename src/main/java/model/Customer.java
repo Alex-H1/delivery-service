@@ -33,6 +33,15 @@ public class Customer {
         this.company = company;
     }
 
+    public Customer(String firstName, String middleInitial, String lastName, String phoneNumber, Integer address, Integer company) {
+        this.firstName = firstName;
+        this.middleInitial = middleInitial;
+        this.lastName = lastName;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+        this.company = company;
+    }
+
     public Customer() {
 
     }

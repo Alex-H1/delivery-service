@@ -1,11 +1,10 @@
 package sql.mybatis;
 
-import model.Company;
 import model.CompanyType;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import sql.ICompanyTypeDAO;
-import sql.mybatis.util.MyBatisSqlFactory;
+import sql.util.MyBatisSqlFactory;
 
 import java.sql.SQLException;
 import java.util.List;

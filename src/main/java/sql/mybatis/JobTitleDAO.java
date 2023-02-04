@@ -4,7 +4,7 @@ import model.JobTitle;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import sql.IJobTitleDAO;
-import sql.mybatis.util.MyBatisSqlFactory;
+import sql.util.MyBatisSqlFactory;
 
 import java.sql.SQLException;
 import java.util.List;

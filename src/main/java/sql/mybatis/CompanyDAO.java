@@ -4,7 +4,7 @@ import model.Company;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import sql.ICompanyDAO;
-import sql.mybatis.util.MyBatisSqlFactory;
+import sql.util.MyBatisSqlFactory;
 
 import java.sql.SQLException;
 import java.util.List;

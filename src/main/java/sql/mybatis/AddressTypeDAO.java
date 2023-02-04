@@ -3,9 +3,8 @@ package sql.mybatis;
 import model.AddressType;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
-import sql.IAddressDAO;
 import sql.IAddressTypeDAO;
-import sql.mybatis.util.MyBatisSqlFactory;
+import sql.util.MyBatisSqlFactory;
 
 import java.sql.SQLException;
 import java.util.List;
