@@ -11,8 +11,15 @@ import java.util.List;
 
 public class CompanyDAO implements ICompanyDAO {
 
+    protected ICompanyDAO iCompanyDAO;
     private SqlSessionFactory sqlSessionFactory = MyBatisSqlFactory.getSqlSessionFactory();
 
+    public CompanyDAO(ICompanyDAO iCompanyDAO) {
+        this.iCompanyDAO = iCompanyDAO;
+    }
+
+    public CompanyDAO() {
+    }
 
     @Override
     public void saveEntity(Company model) throws SQLException {

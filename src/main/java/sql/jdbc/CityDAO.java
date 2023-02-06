@@ -15,8 +15,17 @@ import java.util.List;
 
 public class CityDAO implements ICityDAO {
 
+    protected ICityDAO iCityDAO;
+
     private static final Logger LOG = LogManager.getLogger(AddressTypeDAO.class);
     private final ConnectionPool connectionPool = ConnectionPool.getInstance();
+
+    public CityDAO(ICityDAO iCityDAO) {
+        this.iCityDAO = iCityDAO;
+    }
+
+    public CityDAO() {
+    }
 
     public void saveEntity(City model) throws SQLException {
         Connection c = connectionPool.getConnection();

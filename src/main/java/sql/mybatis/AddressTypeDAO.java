@@ -11,7 +11,17 @@ import java.util.List;
 
 public class AddressTypeDAO implements IAddressTypeDAO {
 
+    protected IAddressTypeDAO  IAddressTypeDAO;
+
+
     private SqlSessionFactory sqlSessionFactory = MyBatisSqlFactory.getSqlSessionFactory();
+
+    public AddressTypeDAO(sql.IAddressTypeDAO IAddressTypeDAO) {
+        this.IAddressTypeDAO = IAddressTypeDAO;
+    }
+
+    public AddressTypeDAO() {
+    }
 
     @Override
     public List<AddressType> getAddressTypeByName(String name) throws SQLException {

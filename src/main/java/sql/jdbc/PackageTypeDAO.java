@@ -4,6 +4,7 @@ import model.PackageType;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import sql.ConnectionPool;
+import sql.IPackageDAO;
 import sql.IPackageTypeDAO;
 
 import java.sql.Connection;
@@ -14,8 +15,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PackageTypeDAO implements IPackageTypeDAO {
+
+    protected IPackageTypeDAO iPackageTypeDAO;
     private static final Logger LOG = LogManager.getLogger(AddressTypeDAO.class);
     private final ConnectionPool connectionPool = ConnectionPool.getInstance();
+
+    public PackageTypeDAO(IPackageTypeDAO iPackageTypeDAO) {
+        this.iPackageTypeDAO = iPackageTypeDAO;
+    }
+
+    public PackageTypeDAO() {
+    }
 
     public void saveEntity(PackageType model) {
         Connection c = connectionPool.getConnection();

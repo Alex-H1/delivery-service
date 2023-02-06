@@ -11,7 +11,15 @@ import java.util.List;
 
 public class OrderDAO implements IOrderDAO {
 
+    protected IOrderDAO iOrderDAO;
     private SqlSessionFactory sqlSessionFactory = MyBatisSqlFactory.getSqlSessionFactory();
+
+    public OrderDAO(IOrderDAO iOrderDAO) {
+        this.iOrderDAO = iOrderDAO;
+    }
+
+    public OrderDAO() {
+    }
 
     @Override
     public void saveEntity(Order model) throws SQLException {

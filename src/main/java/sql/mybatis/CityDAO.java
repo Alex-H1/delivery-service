@@ -11,7 +11,17 @@ import java.util.List;
 
 public class CityDAO implements ICityDAO {
 
+    protected ICityDAO iCityDAO;
+
     private SqlSessionFactory sqlSessionFactory = MyBatisSqlFactory.getSqlSessionFactory();
+
+    public CityDAO(ICityDAO iCityDAO) {
+        this.iCityDAO = iCityDAO;
+    }
+
+    public CityDAO() {
+    }
+
 
     @Override
     public void saveEntity(City model) throws SQLException {

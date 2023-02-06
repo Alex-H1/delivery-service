@@ -29,9 +29,7 @@ public class Staff {
         this.jobTitleId = jobTitleId;
     }
 
-    public Staff() {
 
-    }
 
     public Staff(Integer employeeId, String firstName, String lastName, Integer jobTitleId, Date dateHired) {
         this.employeeId = employeeId;
@@ -41,6 +39,9 @@ public class Staff {
         this.dateHired = dateHired;
     }
 
+    public Staff() {
+
+    }
     public Integer getEmployeeId() {
         return employeeId;
     }

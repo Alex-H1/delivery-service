@@ -11,7 +11,15 @@ import java.util.List;
 
 public class StaffDAO implements IStaffDAO {
 
+    protected IStaffDAO iStaffDAO;
     private SqlSessionFactory sqlSessionFactory = MyBatisSqlFactory.getSqlSessionFactory();
+
+    public StaffDAO(IStaffDAO iStaffDAO) {
+        this.iStaffDAO = iStaffDAO;
+    }
+
+    public StaffDAO() {
+    }
 
     @Override
     public void saveEntity(Staff model) throws SQLException {

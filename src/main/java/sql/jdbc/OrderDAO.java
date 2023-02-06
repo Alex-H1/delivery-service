@@ -15,8 +15,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class OrderDAO implements IOrderDAO {
+
+    protected IOrderDAO iOrderDAO;
     private static final Logger LOG = LogManager.getLogger(OrderDAO.class);
     private final ConnectionPool connectionPool = ConnectionPool.getInstance();
+
+    public OrderDAO(IOrderDAO iOrderDAO) {
+        this.iOrderDAO = iOrderDAO;
+    }
+
+    public OrderDAO() {
+    }
 
     public void saveEntity(Order model) throws SQLException {
         Connection c = connectionPool.getConnection();

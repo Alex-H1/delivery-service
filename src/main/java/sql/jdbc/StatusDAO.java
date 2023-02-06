@@ -14,8 +14,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StatusDAO implements IStatusDAO {
+
+    protected IStatusDAO iStatusDAO;
     private static final Logger LOG = LogManager.getLogger(AddressTypeDAO.class);
     private final ConnectionPool connectionPool = ConnectionPool.getInstance();
+
+    public StatusDAO(IStatusDAO iStatusDAO) {
+        this.iStatusDAO = iStatusDAO;
+    }
+
+    public StatusDAO() {
+    }
 
     public void saveEntity(Status model) throws SQLException {
         Connection c = connectionPool.getConnection();

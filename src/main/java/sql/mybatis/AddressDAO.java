@@ -12,7 +12,15 @@ import java.util.List;
 
 public class AddressDAO implements IAddressDAO {
 
+    protected IAddressDAO iAddressDAO;
+
     private SqlSessionFactory sqlSessionFactory = MyBatisSqlFactory.getSqlSessionFactory();
+    public AddressDAO() {
+    }
+
+    public AddressDAO(IAddressDAO iAddressDAO) {
+        this.iAddressDAO = iAddressDAO;
+    }
 
     @Override
     public Address getAddressByAddress(String address) throws SQLException {

@@ -11,7 +11,15 @@ import java.util.List;
 
 public class JobTitleDAO implements IJobTitleDAO {
 
+    protected IJobTitleDAO iJobTitleDAO;
     private SqlSessionFactory sqlSessionFactory = MyBatisSqlFactory.getSqlSessionFactory();
+
+    public JobTitleDAO(IJobTitleDAO iJobTitleDAO) {
+        this.iJobTitleDAO = iJobTitleDAO;
+    }
+
+    public JobTitleDAO() {
+    }
 
     @Override
     public void saveEntity(JobTitle model) throws SQLException {

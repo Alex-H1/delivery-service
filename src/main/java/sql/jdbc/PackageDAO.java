@@ -14,8 +14,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PackageDAO implements IPackageDAO {
+
+    protected IPackageDAO iPackageDAO;
     private static final Logger LOG = LogManager.getLogger(PackageDAO.class);
     private final ConnectionPool connectionPool = ConnectionPool.getInstance();
+
+    public PackageDAO(IPackageDAO iPackageDAO) {
+        this.iPackageDAO = iPackageDAO;
+    }
+
+    public PackageDAO() {
+    }
 
     public void saveEntity(Package model) throws SQLException {
         Connection c = connectionPool.getConnection();

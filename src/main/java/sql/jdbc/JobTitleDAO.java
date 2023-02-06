@@ -14,8 +14,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class JobTitleDAO implements IJobTitleDAO {
+
+    protected IJobTitleDAO iJobTitleDAO;
     private static final Logger LOG = LogManager.getLogger(JobTitleDAO.class);
     private final ConnectionPool connectionPool = ConnectionPool.getInstance();
+
+    public JobTitleDAO(IJobTitleDAO iJobTitleDAO) {
+        this.iJobTitleDAO = iJobTitleDAO;
+    }
+
+    public JobTitleDAO() {
+    }
 
     public void saveEntity(JobTitle model) throws SQLException {
         Connection c = connectionPool.getConnection();

@@ -14,8 +14,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StaffDAO implements IStaffDAO {
+
+    protected IStaffDAO iStaffDAO;
     private static final Logger LOG = LogManager.getLogger(StaffDAO.class);
     private final ConnectionPool connectionPool = ConnectionPool.getInstance();
+
+    public StaffDAO(IStaffDAO iStaffDAO) {
+        this.iStaffDAO = iStaffDAO;
+    }
+
+    public StaffDAO() {
+    }
 
     public void saveEntity(Staff model) throws SQLException {
         Connection c = connectionPool.getConnection();
@@ -122,6 +131,7 @@ public class StaffDAO implements IStaffDAO {
                     staff.setFirstName(rs.getString("first_name"));
                     staff.setLastName(rs.getString("last_name"));
                     staff.setJobTitleId(rs.getInt("job_title_id"));
+                    staffList.add(staff);
                 }
             }
         } catch (SQLException e) {

@@ -14,8 +14,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CompanyDAO implements ICompanyDAO {
+
+    protected ICompanyDAO iCompanyDAO;
+
     private static final Logger LOG = LogManager.getLogger(CompanyDAO.class);
     private final ConnectionPool connectionPool = ConnectionPool.getInstance();
+
+    public CompanyDAO(ICompanyDAO iCompanyDAO) {
+        this.iCompanyDAO = iCompanyDAO;
+    }
+
+    public CompanyDAO() {
+    }
 
     public void saveEntity(Company model) throws SQLException {
         Connection c = connectionPool.getConnection();
