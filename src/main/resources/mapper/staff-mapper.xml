@@ -1,0 +1,37 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="sql.IStaffDAO">
+    <resultMap type="Staff" id="StaffResultMap" autoMapping="false">
+        <result property="employeeId" column="employee_id"/>
+        <result property="firstName" column="first_name"/>
+        <result property="lastName" column="last_name"/>
+        <result property="jobTitleId" column="job_title_id"/>
+    </resultMap>
+    <insert id="saveEntity" keyProperty="staff_id">
+        INSERT INTO staff (first_name, last_name, job_title_id)
+        VALUES (#{firstName}, #{lastName}, #{jobTitleId});
+    </insert>
+    <update id="updateEntity" parameterType = "Staff">
+        UPDATE staff SET
+                            tracking_number = #{trackingNumber},
+                            package_type_id = #{packageTypeId},
+                            weight = #{weight}
+                                =        WHERE package_id = #{packageId};
+    </update>
+    <delete id = "removeEntity" parameterType = "int">
+        DELETE from staff WHERE package_type_id = #{id};
+    </delete>
+    <select id = "getEntityById" parameterType = "int" resultMap = "StaffResultMap">
+        SELECT * FROM staff WHERE package_types_id = #{id};
+    </select>
+    <select id = "getAll" resultMap = "StaffResultMap">
+        SELECT * FROM staff;
+    </select>
+    <select id = "getStaffByName" parameterType="String" resultMap = "StaffResultMap">
+        SELECT * FROM staff WHERE first_name = #{name};
+    </select>
+</mapper>

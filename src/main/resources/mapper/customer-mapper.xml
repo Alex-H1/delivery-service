@@ -1,0 +1,43 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="sql.ICustomerDAO">
+    <resultMap type="Customer" id="CustomerResultMap" autoMapping="false">
+        <result property="customerId" column="customer_id"/>
+        <result property="firstName" column="first_name"/>
+        <result property="middleInitial" column="middle_initial"/>
+        <result property="lastName" column="last_name"/>
+        <result property="phoneNumber" column="phone_number"/>
+        <result property="address" column="address_id"/>
+        <result property="company" column="company_id"/>
+    </resultMap>
+    <insert id="saveEntity" keyProperty="customer_id">
+        INSERT INTO customers (first_name, middle_initial, last_name, phone_number, address_id, company_id)
+        VALUES (#{firstName}, #{middleInitial}, #{lastName}, #{phoneNumber}, #{address}, #{company});
+    </insert>
+    <update id="updateEntity" parameterType = "Customer">
+        UPDATE customers SET
+                             first_name = #{firstName},
+                             middle_initial = #{middleInitial},
+                             last_name = #{lastName},
+                             phone_number = #{phoneNumber},
+                             address_id = #{address},
+                             company_id = #{company},
+            =        WHERE customer_id = #{customerId};
+    </update>
+    <delete id = "removeEntity" parameterType = "int">
+        DELETE from customers WHERE customer_id = #{id};
+    </delete>
+    <select id = "getEntityById" parameterType = "int" resultMap = "CustomerResultMap">
+        SELECT * FROM customers WHERE customer_id = #{id};
+    </select>
+    <select id = "getAll" resultMap = "CustomerResultMap">
+        SELECT * FROM customers;
+    </select>
+    <select id = "getCustomerByPhoneNumber" parameterType="String" resultMap = "CustomerResultMap">
+        SELECT * FROM customers WHERE phone_number = #{phoneNumber};
+    </select>
+</mapper>

@@ -1,0 +1,70 @@
+{
+  "customers": [
+    {
+      "customerId": 1,
+      "firstName": "John",
+      "middleInitial": "O",
+      "lastName": "Doe",
+      "phoneNumber": "(434)449-6545",
+      "address": 1,
+      "company": 2
+    },
+    {
+      "customerId": 2,
+      "firstName": "Jimmy",
+      "middleInitial": "D",
+      "lastName": "Johns",
+      "phoneNumber": "(475)482-3542",
+      "address": 3,
+      "company": 4
+    }
+  ],
+  "staff": [
+    {
+      "employeeId": 1,
+      "firstName": "Jane",
+      "lastName": "June",
+      "jobTitleId": 3,
+      "dateHired": " 02004-05-23"
+    },
+    {
+      "employeeId": 2,
+      "firstName": "Jane",
+      "lastName": "June",
+      "jobTitleId": 3,
+      "dateHired": " 02004-05-23"
+    }
+  ],
+  "companies": [
+    {
+      "companyId": 1,
+      "companyName": "John's Construction",
+      "companyType": 1
+    },
+    {
+      "companyId": 2,
+      "companyName": "Walmart",
+      "companyType": 2
+    }
+  ],
+  "companyTypes": [
+    {
+      "companyTypeId": 1,
+      "companytypeName": "industrial"
+    },
+    {
+      "companyTypeId": 2,
+      "companytypeName": "retail"
+    }
+  ],
+  "countries": [
+    {
+      "countryId": 1,
+      "countryName": "Canada"
+    },
+    {
+      "countryId": 2,
+      "countryName": "China"
+    }
+  ]
+}
