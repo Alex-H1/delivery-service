@@ -11,15 +11,7 @@ import java.util.List;
 
 public class CustomerDAO implements ICustomerDAO {
 
-    protected ICustomerDAO iCustomerDAO;
     private SqlSessionFactory sqlSessionFactory = MyBatisSqlFactory.getSqlSessionFactory();
-
-    public CustomerDAO(ICustomerDAO iCustomerDAO) {
-        this.iCustomerDAO = iCustomerDAO;
-    }
-
-    public CustomerDAO() {
-    }
 
     @Override
     public void saveEntity(Customer model) throws SQLException {

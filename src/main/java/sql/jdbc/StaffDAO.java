@@ -15,16 +15,8 @@ import java.util.List;
 
 public class StaffDAO implements IStaffDAO {
 
-    protected IStaffDAO iStaffDAO;
     private static final Logger LOG = LogManager.getLogger(StaffDAO.class);
     private final ConnectionPool connectionPool = ConnectionPool.getInstance();
-
-    public StaffDAO(IStaffDAO iStaffDAO) {
-        this.iStaffDAO = iStaffDAO;
-    }
-
-    public StaffDAO() {
-    }
 
     public void saveEntity(Staff model) throws SQLException {
         Connection c = connectionPool.getConnection();

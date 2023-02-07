@@ -11,15 +11,7 @@ import java.util.List;
 
 public class StatusDAO implements IStatusDAO {
 
-    protected IStatusDAO iStatusDAO;
     private SqlSessionFactory sqlSessionFactory = MyBatisSqlFactory.getSqlSessionFactory();
-
-    public StatusDAO(IStatusDAO iStatusDAO) {
-        this.iStatusDAO = iStatusDAO;
-    }
-
-    public StatusDAO() {
-    }
 
     @Override
     public void saveEntity(Status model) throws SQLException {

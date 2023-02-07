@@ -16,17 +16,10 @@ import java.util.List;
 
 public class AddressTypeDAO implements IAddressTypeDAO {
 
-    protected IAddressTypeDAO  IAddressTypeDAO;
-
     private static final Logger LOG = LogManager.getLogger(AddressTypeDAO.class);
     private final ConnectionPool connectionPool = ConnectionPool.getInstance();
 
-    public AddressTypeDAO(sql.IAddressTypeDAO IAddressTypeDAO) {
-        this.IAddressTypeDAO = IAddressTypeDAO;
-    }
-
-    public AddressTypeDAO() {
-    }
+  
 
     public List<AddressType> getAddressTypeByName(String name) throws SQLException {
         Connection c = ConnectionPool.getInstance().getConnection();

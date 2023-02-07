@@ -15,16 +15,8 @@ import java.util.List;
 
 public class CustomerDAO implements ICustomerDAO {
 
-    protected ICustomerDAO iCustomerDAO;
     private static final Logger LOG = LogManager.getLogger(CustomerDAO.class);
     private final ConnectionPool connectionPool = ConnectionPool.getInstance();
-
-    public CustomerDAO(ICustomerDAO iCustomerDAO) {
-        this.iCustomerDAO = iCustomerDAO;
-    }
-
-    public CustomerDAO() {
-    }
 
     public void saveEntity(Customer model) throws SQLException {
         Connection c = connectionPool.getConnection();

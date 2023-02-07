@@ -11,15 +11,8 @@ import java.util.List;
 
 public class PackageTypeDAO implements IPackageTypeDAO {
 
-    protected IPackageTypeDAO iPackageTypeDAO;
     private SqlSessionFactory sqlSessionFactory = MyBatisSqlFactory.getSqlSessionFactory();
 
-    public PackageTypeDAO(IPackageTypeDAO iPackageTypeDAO) {
-        this.iPackageTypeDAO = iPackageTypeDAO;
-    }
-
-    public PackageTypeDAO() {
-    }
 
     @Override
     public void saveEntity(PackageType model) throws SQLException {

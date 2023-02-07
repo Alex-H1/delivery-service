@@ -14,16 +14,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CountryDAO implements ICountryDAO {
-    protected ICountryDAO countryDAO;
+
     private static final Logger LOG = LogManager.getLogger(CountryDAO.class);
     private final ConnectionPool connectionPool = ConnectionPool.getInstance();
-
-    public CountryDAO(ICountryDAO countryDAO) {
-        this.countryDAO = countryDAO;
-    }
-
-    public CountryDAO() {
-    }
 
     public void saveEntity(Country model) throws SQLException {
         Connection c = connectionPool.getConnection();

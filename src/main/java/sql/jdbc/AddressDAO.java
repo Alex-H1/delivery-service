@@ -19,12 +19,6 @@ public class AddressDAO implements IAddressDAO {
     private static final Logger LOG = LogManager.getLogger(AddressDAO.class);
     private final ConnectionPool connectionPool = ConnectionPool.getInstance();
 
-    public AddressDAO() {
-    }
-
-    public AddressDAO(IAddressDAO iAddressDAO) {
-        this.iAddressDAO = iAddressDAO;
-    }
 
     public Address getAddressByAddress(String address) throws SQLException {
         Connection c = connectionPool.getConnection();

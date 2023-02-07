@@ -11,15 +11,7 @@ import java.util.List;
 
 public class CountryDAO implements ICountryDAO {
 
-    protected ICountryDAO countryDAO;
     private SqlSessionFactory sqlSessionFactory = MyBatisSqlFactory.getSqlSessionFactory();
-
-    public CountryDAO(ICountryDAO countryDAO) {
-        this.countryDAO = countryDAO;
-    }
-
-    public CountryDAO() {
-    }
 
     @Override
     public void saveEntity(Country model) throws SQLException {
