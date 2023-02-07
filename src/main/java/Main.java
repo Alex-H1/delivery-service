@@ -7,7 +7,6 @@ import sql.IBaseDAO;
 import sql.jdbc.CompanyDAO;
 import sql.jdbc.CustomerDAO;
 import sql.util.DBFactoryGenerator;
-import sql.util.FacadeFactory;
 
 import java.sql.SQLException;
 import java.util.List;
