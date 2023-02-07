@@ -15,8 +15,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AddressTypeDAO implements IAddressTypeDAO {
+
     private static final Logger LOG = LogManager.getLogger(AddressTypeDAO.class);
     private final ConnectionPool connectionPool = ConnectionPool.getInstance();
+
+  
 
     public List<AddressType> getAddressTypeByName(String name) throws SQLException {
         Connection c = ConnectionPool.getInstance().getConnection();

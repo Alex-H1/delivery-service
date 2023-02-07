@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CustomerDAO implements ICustomerDAO {
+
     private static final Logger LOG = LogManager.getLogger(CustomerDAO.class);
     private final ConnectionPool connectionPool = ConnectionPool.getInstance();
 
@@ -23,7 +24,6 @@ public class CustomerDAO implements ICustomerDAO {
                 "address_id, company_id, middle_initial)"
                 + "VALUES((?), (?), (?), (?), (?), (?))";
         try (PreparedStatement ps = c.prepareStatement(query)) {
-
             ps.setString(1, model.getFirstName());
             ps.setString(2, model.getLastName());
             ps.setString(3, model.getPhoneNumber());
@@ -134,7 +134,7 @@ public class CustomerDAO implements ICustomerDAO {
 
     public void removeEntity(int id) throws SQLException {
         Connection c = connectionPool.getConnection();
-        String query = "DELETE FROM countries WHERE country_id=(?)";
+        String query = "DELETE FROM customers WHERE customer_id=(?)";
         try (PreparedStatement ps = c.prepareStatement(query)) {
             ps.setInt(1, id);
             ps.execute();

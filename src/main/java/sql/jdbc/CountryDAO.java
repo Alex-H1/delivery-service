@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CountryDAO implements ICountryDAO {
+
     private static final Logger LOG = LogManager.getLogger(CountryDAO.class);
     private final ConnectionPool connectionPool = ConnectionPool.getInstance();
 

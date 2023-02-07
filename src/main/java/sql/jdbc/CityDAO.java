@@ -18,6 +18,8 @@ public class CityDAO implements ICityDAO {
     private static final Logger LOG = LogManager.getLogger(AddressTypeDAO.class);
     private final ConnectionPool connectionPool = ConnectionPool.getInstance();
 
+
+
     public void saveEntity(City model) throws SQLException {
         Connection c = connectionPool.getConnection();
         String query = "INSERT INTO cities (city_name, country_id)"

@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CompanyDAO implements ICompanyDAO {
+
     private static final Logger LOG = LogManager.getLogger(CompanyDAO.class);
     private final ConnectionPool connectionPool = ConnectionPool.getInstance();
 

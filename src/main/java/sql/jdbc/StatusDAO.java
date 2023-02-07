@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StatusDAO implements IStatusDAO {
+
     private static final Logger LOG = LogManager.getLogger(AddressTypeDAO.class);
     private final ConnectionPool connectionPool = ConnectionPool.getInstance();
 

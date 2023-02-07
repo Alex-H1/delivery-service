@@ -15,8 +15,10 @@ import java.util.List;
 
 public class AddressDAO implements IAddressDAO {
 
+    protected IAddressDAO iAddressDAO;
     private static final Logger LOG = LogManager.getLogger(AddressDAO.class);
     private final ConnectionPool connectionPool = ConnectionPool.getInstance();
+
 
     public Address getAddressByAddress(String address) throws SQLException {
         Connection c = connectionPool.getConnection();

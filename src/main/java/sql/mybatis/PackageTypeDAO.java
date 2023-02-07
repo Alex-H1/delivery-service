@@ -13,6 +13,7 @@ public class PackageTypeDAO implements IPackageTypeDAO {
 
     private SqlSessionFactory sqlSessionFactory = MyBatisSqlFactory.getSqlSessionFactory();
 
+
     @Override
     public void saveEntity(PackageType model) throws SQLException {
         try (SqlSession session = sqlSessionFactory.openSession()) {

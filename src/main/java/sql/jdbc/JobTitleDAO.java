@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class JobTitleDAO implements IJobTitleDAO {
+
     private static final Logger LOG = LogManager.getLogger(JobTitleDAO.class);
     private final ConnectionPool connectionPool = ConnectionPool.getInstance();
 

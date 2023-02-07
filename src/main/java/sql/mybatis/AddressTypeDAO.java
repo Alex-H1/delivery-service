@@ -13,6 +13,7 @@ public class AddressTypeDAO implements IAddressTypeDAO {
 
     private SqlSessionFactory sqlSessionFactory = MyBatisSqlFactory.getSqlSessionFactory();
 
+
     @Override
     public List<AddressType> getAddressTypeByName(String name) throws SQLException {
         List<AddressType> addressTypeList;

@@ -14,6 +14,7 @@ public class AddressDAO implements IAddressDAO {
 
     private SqlSessionFactory sqlSessionFactory = MyBatisSqlFactory.getSqlSessionFactory();
 
+
     @Override
     public Address getAddressByAddress(String address) throws SQLException {
         Address address1;

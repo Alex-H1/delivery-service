@@ -15,9 +15,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CompanyTypeDAO implements ICompanyTypeDAO {
+
     private static final Logger LOG = LogManager.getLogger(CompanyTypeDAO.class);
     private final ConnectionPool connectionPool = ConnectionPool.getInstance();
-
 
     public void saveEntity(CompanyType model) throws SQLException {
         Connection c = connectionPool.getConnection();
